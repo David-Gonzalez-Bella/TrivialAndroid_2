@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentoPreguntaImagen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enunciado3"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:divider="@drawable/separador"
+                android:layoutDirection="locale"
+                android:orientation="horizontal"
+                android:showDividers="middle"
+                android:soundEffectsEnabled="false">
+
+                <ImageButton
+                    android:id="@+id/respuesta2"
+                    android:layout_width="143dp"
+                    android:layout_height="136dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/maestroyi"
+                    android:tint="#00008EFF"
+                    tools:src="@drawable/caitlyn" />
+
+                <ImageButton
+                    android:id="@+id/respuesta1"
+                    android:layout_width="143dp"
+                    android:layout_height="136dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/maestroyi"
+                    tools:src="@drawable/caitlyn" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@drawable/separador"
+                android:showDividers="middle">
+
+                <ImageButton
+                    android:id="@+id/respuesta3"
+                    android:layout_width="143dp"
+                    android:layout_height="136dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/maestroyi"
+                    android:tint="#00008EFF"
+                    tools:src="@drawable/caitlyn" />
+
+                <ImageButton
+                    android:id="@+id/respuesta4"
+                    android:layout_width="143dp"
+                    android:layout_height="136dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/maestroyi"
+                    android:tint="#00008EFF"
+                    tools:src="@drawable/caitlyn" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/enunciado3"
+            android:layout_width="308dp"
+            android:layout_height="142dp"
+            android:layout_marginTop="65dp"
+            android:text="Titulo Pregunta"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.loltrivial">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/applogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/applogo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity
+            android:name=".Resultados"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Ajustes"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Categoria"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Jugar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MenuPricipal"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LogIn"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+</manifest>

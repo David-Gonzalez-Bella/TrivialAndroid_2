@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fondoLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondomenuprincipal"
+    android:clickable="false"
+    android:soundEffectsEnabled="false"
+    android:splitMotionEvents="false"
+    android:textAlignment="center"
+    tools:context=".MenuPricipal">
+
+
+    <ImageView
+        android:id="@+id/AppLogoMP"
+        android:layout_width="120dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/applogo" />
+
+    <TextView
+        android:id="@+id/CampoUsuario"
+        android:layout_width="167dp"
+        android:layout_height="47dp"
+        android:background="@drawable/redes_boton"
+        android:ems="10"
+        android:paddingLeft="1dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308" />
+
+    <ImageButton
+        android:id="@+id/Icono"
+        android:layout_width="93dp"
+        android:layout_height="93dp"
+        android:background="#00FFFFFF"
+        android:onClick="CambarIcono"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.278"
+        app:srcCompat="@drawable/iconori" />
+
+    <ImageButton
+        android:id="@+id/Jugar"
+        android:layout_width="175dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="60dp"
+        android:background="#00FFFFFF"
+        android:onClick="EntrarPartida"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CampoUsuario"
+        app:srcCompat="@drawable/botonjugar" />
+
+    <ImageButton
+        android:id="@+id/Categoria"
+        android:layout_width="175dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
+        android:onClick="EntrarCategoria"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Jugar"
+        app:srcCompat="@drawable/botonacategoria" />
+
+    <ImageButton
+        android:id="@+id/Ajustes"
+        android:layout_width="175dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="20dp"
+        android:background="#00FFFFFF"
+        android:onClick="EntrarAjustes"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Categoria"
+        app:srcCompat="@drawable/botonajustes" />
+
+    <Button
+        android:id="@+id/Salir"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/salir_boton"
+        android:fontFamily="sans-serif"
+        android:onClick="SalirAlerta"
+        android:text="X"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

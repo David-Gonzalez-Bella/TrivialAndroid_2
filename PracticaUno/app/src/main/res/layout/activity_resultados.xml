@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fondoLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondomenuprincipal"
+    tools:context=".Resultados">
+
+    <ImageButton
+        android:id="@+id/volverMenuP"
+        android:layout_width="118dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        android:onClick="EntrarMenuP"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoResultado"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/botonempezar" />
+
+    <ImageView
+        android:id="@+id/campana1"
+        android:layout_width="60dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="104dp"
+        android:soundEffectsEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/felicidades"
+        app:layout_constraintEnd_toStartOf="@+id/appLogoMP"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.245"
+        app:srcCompat="@drawable/campana" />
+
+    <ImageView
+        android:id="@+id/campana2"
+        android:layout_width="60dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="108dp"
+        android:background="#00FFFFFF"
+        android:scaleX="-1"
+        android:soundEffectsEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/felicidades"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toEndOf="@+id/appLogoMP"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183"
+        app:srcCompat="@drawable/campana" />
+
+    <TextView
+        android:id="@+id/acertado"
+        android:layout_width="151dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif"
+        android:text="Has acertado:"
+        android:textColor="#FADB6A"
+        android:textColorHighlight="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/felicidades" />
+
+    <ImageView
+        android:id="@+id/appLogoMP"
+        android:layout_width="120dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/applogo" />
+
+    <TextView
+        android:id="@+id/felicidades"
+        android:layout_width="202dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif"
+        android:text="¡Felicidades!"
+        android:textColor="#FADB6A"
+        android:textColorHighlight="#000000"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appLogoMP" />
+
+    <TextView
+        android:id="@+id/textoResultado"
+        android:layout_width="142dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:text="acertadas"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/acertado" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
