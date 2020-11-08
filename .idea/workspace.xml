@@ -1,7 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f43e7b6-d53d-4559-94d0-9bb41f6b032f" name="Default Changelist" comment="" />
+    <list default="true" id="ae257dea-e267-4d16-95e6-78f0a3f68177" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/TrivialAndroid.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/caches/build_file_checksums.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_annotation_annotation_1_2_0_alpha01_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_2_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_2_0_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_core_core_1_5_0_alpha04_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_core_core_ktx_1_5_0_alpha04_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_gridlayout_gridlayout_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_test_core_1_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_2_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_test_monitor_1_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_test_runner_1_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_4_10_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_4_10_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_4_10_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/androidTest/java/com/example/loltrivial/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/icon_launcher-playstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/Ajustes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/Categoria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/FragmentoPregunta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/FragmentoPreguntaImagen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/FragmentoPreguntaMixta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/Jugar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/ListaPreguntas.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/ListaPreguntasHibridas.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/ListaPreguntasImagen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/LogIn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/MenuPricipal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/Pregunta.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/PreguntaHibrida.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/PreguntaImagen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/java/com/example/loltrivial/Resultados.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable-v24/flecha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable-v24/fondomenuprincipal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable-v24/pantallajuego.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/adorno.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/applogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/aurelion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/botonacategoria.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/botonajustes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/botondemacia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/botonempezar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/botonfreljord.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/botonionia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/botonjugar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/botonnoxus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/caitlyn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/campana.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/deathfire_grasp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/diana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/ezreal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/fiora.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/fnatic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/fondomenuprincipalclaro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/fpx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/g2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/garen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/icon_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/iconkata.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/iconori.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/iconquinn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/iconxayah.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/ionia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/kakugameslogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/katarina.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/kayle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/maestroyi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/neeko.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/noxus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/pantallajuegoclaro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/piltover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/quinn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/redes_boton.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/rengar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/sainnylogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/salir_boton.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/separador.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/soraka.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/soraka_guardian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/targon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/uol.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/vi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/drawable/zac.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/font/alegreya_sc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/font/amita.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/font/athiti.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/font/federant.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/layout/activity_ajustes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/layout/activity_categoria.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/layout/activity_jugar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/layout/activity_menu_pricipal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/layout/activity_resultados.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/layout/fragment_fragmento_pregunta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/layout/fragment_fragmento_pregunta_imagen.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/layout/fragment_fragmento_pregunta_mixta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-anydpi-v26/icon_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-anydpi-v26/icon_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-hdpi/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-hdpi/icon_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-hdpi/icon_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-hdpi/icon_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-mdpi/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-mdpi/icon_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-mdpi/icon_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-mdpi/icon_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xhdpi/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xhdpi/icon_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xhdpi/icon_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xhdpi/icon_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxhdpi/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxhdpi/icon_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxhdpi/icon_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxhdpi/icon_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxxhdpi/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxxhdpi/icon_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxxhdpi/icon_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/mipmap-xxxhdpi/icon_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/raw/bensound_adventure.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/raw/elegir_respuesta.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/raw/pantalla_resultados.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/values/font_certs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/values/preloaded_fonts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/app/src/test/java/com/example/loltrivial/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaUno/settings.gradle" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +232,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1jHuksf1Usns0e74xoLoeFo9jmL" />
+  <component name="ProjectId" id="1jyVT6d7ceDwJBl3H2g0d2TTB5O" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -18,29 +240,31 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/PracticaUno" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TrivialAndroid/PracticaUno" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0f43e7b6-d53d-4559-94d0-9bb41f6b032f" name="Default Changelist" comment="" />
-      <created>1603473485370</created>
+      <changelist id="ae257dea-e267-4d16-95e6-78f0a3f68177" name="Default Changelist" comment="" />
+      <created>1604776322549</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603473485370</updated>
+      <updated>1604776322549</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1603897646555">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1604776367850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603897646555" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1603473527386">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604776367850" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1604776327775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603473527386" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604776327774" />
   </component>
 </project>
