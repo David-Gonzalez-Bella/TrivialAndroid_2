@@ -18,7 +18,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
     public static synchronized PreguntasRoomBBDD getInstanciaCompartida(final Context context) {
         if (INSTANCIA_COMPARTIDA == null) {
-            //Creamos la BBDD
+            //Creamos la BBDD en caso de estar vacia
             INSTANCIA_COMPARTIDA = Room.databaseBuilder(context.getApplicationContext(),
                                     PreguntasRoomBBDD.class, "Preguntas_BBDD")
                                     .addCallback(RoomCallback)
@@ -30,7 +30,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
     private static RoomDatabase.Callback RoomCallback = new RoomDatabase.Callback(){ //Callback de la BBDD
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
-            super.onCreate(db);
+            super.onCreate(db); //Crear la BBDD
             new PopulateDbAsync(INSTANCIA_COMPARTIDA).execute();
         }
     };
@@ -44,7 +44,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
         }
 
         @Override
-        protected Void doInBackground(final Void... params) { //Operaciones de la BBDD
+        protected Void doInBackground(final Void... params) { //Operaciones de la BBDD - Borrar y despues llenarla con las preguntas
             preguntaDao.deleteAll(); //Vaciar la BBDD para evitar duplicados
             preguntaDao.insert(new PreguntaEntidad("¿Cuál es la región más fría de Runeterra?",
                                                     "Noxus",

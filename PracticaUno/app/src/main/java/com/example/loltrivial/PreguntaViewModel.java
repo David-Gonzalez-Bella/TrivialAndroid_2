@@ -19,7 +19,5 @@ public class PreguntaViewModel extends AndroidViewModel {
 
     LiveData<List<PreguntaEntidad>> getPreguntas() { return mPreguntas; }
 
-    public void insert(PreguntaEntidad preguntaEntidad) { mRepositorio.insert(preguntaEntidad); }
-
-
+    //public void insert(PreguntaEntidad preguntaEntidad) { mRepositorio.insert(preguntaEntidad); }
 }

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,17 +14,26 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Jugar extends AppCompatActivity {
 
-    //Variables globales
+    //BBDD ROOM
+    private List<PreguntaEntidad> listaPreguntas;
+    private PreguntaEntidad preguntaActual;
+    private PreguntaViewModel preguntaViewModel;
+    private int contadorAcertadas = 0;
+    private int contadorFalladas = 0;
+    private int contadorPreguntas = 0;
+    private int totalPreguntas;
 
+    //Variables globales
     //Listas de preguntas
     public ArrayList<Pregunta> preguntas;
     public ArrayList<PreguntaImagen> preguntasImagen;
@@ -31,7 +42,7 @@ public class Jugar extends AppCompatActivity {
     //Controles de la actividad
     public ConstraintLayout fondo;
     public TextView puntuacion;
-    public TextView contadorPreguntas;
+    public TextView contadorPreguntasTexto;
 
     //Contadores y flags
     public int preguntaId;
@@ -39,8 +50,8 @@ public class Jugar extends AppCompatActivity {
     public int preguntaMixtaId;
     public int elegida;
     public int acertadas;
-    public int preguntaActual;
-    public int totalPreguntas;
+    public int preguntaCurrent;
+    public int totalPreguntasViejo;
     public boolean cuentaAtrasActiva;
     private boolean correcta;
     public int tiempoTotal;
@@ -60,8 +71,19 @@ public class Jugar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugar);
 
+        //BBDD ROOM
+        preguntaViewModel = ViewModelProviders.of(this).get(PreguntaViewModel.class);
+        preguntaViewModel.getPreguntas().observe(this, new Observer<List<PreguntaEntidad>>() { //Observador de la lista de "preguntas entidad"
+            @Override
+            public void onChanged(List<PreguntaEntidad> preguntasEntidad) {
+                //Acciones al crear las preguntas
+                Toast.makeText(Jugar.this, "PREGUNTAS LISTAS! :)", Toast.LENGTH_SHORT).show();
+                llenarListaPreguntas(preguntasEntidad); //fetch
+            }
+        });
+
         //Encontrar la referencia al control correspondiente
-        contadorPreguntas = findViewById(R.id.contadorPreguntas);
+        contadorPreguntasTexto = findViewById(R.id.contadorPreguntas);
         barraTiempo = findViewById(R.id.tiempo);
         fondo = findViewById(R.id.fondoLayout);
         puntuacion = findViewById(R.id.puntuacion);
@@ -76,18 +98,18 @@ public class Jugar extends AppCompatActivity {
         elegida = 0;
         acertadas = 0;
         puntuacion.setText("Puntuacion: " + acertadas);
-        preguntaActual = 1;
+        preguntaCurrent = 1;
         correcta = false;
         elegirRespuesta_snd = MediaPlayer.create(this, R.raw.elegir_respuesta);
-        totalPreguntas = preguntas.size() + preguntasImagen.size() + preguntasMixtas.size();
-        contadorPreguntas.setText(preguntaActual + "/" + totalPreguntas);
+        totalPreguntasViejo = preguntas.size() + preguntasImagen.size() + preguntasMixtas.size();
+        contadorPreguntasTexto.setText(preguntaCurrent + "/" + totalPreguntasViejo);
         if(Ajustes.fondoOscuro) //Establecer el tema claro u oscuro segun corresponda
         {
             fondo.setBackgroundResource(R.drawable.pantallajuego);
-            contadorPreguntas.setTextColor(0xFFFFFFFF);
+            contadorPreguntasTexto.setTextColor(0xFFFFFFFF);
         } else{
             fondo.setBackgroundResource(R.drawable.pantallajuegoclaro);
-            contadorPreguntas.setTextColor(0xFF687372);
+            contadorPreguntasTexto.setTextColor(0xFF687372);
         }
 
         //Llamadas a metodos iniciales
@@ -104,6 +126,24 @@ public class Jugar extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         LogIn.mediaPlayer.start();
+    }
+
+    private void llenarListaPreguntas(List<PreguntaEntidad> preguntas){
+        listaPreguntas = preguntas; //Llenamos la lista del activity con la lista de preguntas de PreguntaViewModel
+        totalPreguntas = listaPreguntas.size(); // Igualamos el total de preguntas a la lingitud de la lista
+        Collections.shuffle(listaPreguntas); //Barajar las preguntas
+        gestionarPartida();
+    }
+
+    private void gestionarPartida() {
+        if(contadorPreguntas < totalPreguntas - 1){
+            preguntaActual = listaPreguntas.get(contadorPreguntas++);
+            //Crear el fragmento correspondiente
+            CrearFragmentoTexto();
+            CrearBarraTiempo();
+        }else{
+            //finish trivial
+        }
     }
 
     @Override
@@ -131,7 +171,7 @@ public class Jugar extends AppCompatActivity {
                         }else {
                             CrearFragmentoImagen();
                             CrearBarraTiempo();
-                            contadorPreguntas.setText(++preguntaActual + "/" + totalPreguntas);
+                            contadorPreguntasTexto.setText(++preguntaCurrent + "/" + totalPreguntasViejo);
                         }
                     }
                 }
@@ -149,7 +189,7 @@ public class Jugar extends AppCompatActivity {
                         }else {
                             CrearFragmentoHibrido();
                             CrearBarraTiempo();
-                            contadorPreguntas.setText(++preguntaActual + "/" + totalPreguntas);
+                            contadorPreguntasTexto.setText(++preguntaCurrent + "/" + totalPreguntasViejo);
                         }
                     }
                 }
@@ -167,7 +207,7 @@ public class Jugar extends AppCompatActivity {
                         }else {
                             CrearFragmentoTexto();
                             CrearBarraTiempo();
-                            contadorPreguntas.setText(++preguntaActual + "/" + totalPreguntas);
+                            contadorPreguntasTexto.setText(++preguntaCurrent + "/" + totalPreguntasViejo);
                         }
                     }else{
                         if(cuentaAtrasActiva){ cuentaAtras.cancel(); }
@@ -315,7 +355,7 @@ public class Jugar extends AppCompatActivity {
                                 break;
                         }
                         CrearBarraTiempo();
-                        contadorPreguntas.setText(++preguntaActual + "/" + totalPreguntas);
+                        contadorPreguntasTexto.setText(++preguntaCurrent + "/" + totalPreguntasViejo);
                         elegida = 0; //La pregunta elegido al cambiar de pregunta sera, evidentemente, 0
                     }
                 });
