@@ -64,12 +64,12 @@ public class FragmentoPreguntaMixta extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //Actualizar los textos del fragmento al crearlo
-        enunciado.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getPregunta());
-        imagen.setImageResource(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getImagen());
-        r1.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion1());
-        r2.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion2());
-        r3.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion3());
-        r4.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion4());
+//        enunciado.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getPregunta());
+//        imagen.setImageResource(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getImagen());
+//        r1.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion1());
+//        r2.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion2());
+//        r3.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion3());
+//        r4.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion4());
     }
 
     @Override

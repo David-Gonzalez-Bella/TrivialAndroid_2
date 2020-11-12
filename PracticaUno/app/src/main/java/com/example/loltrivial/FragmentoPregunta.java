@@ -62,11 +62,11 @@ public class FragmentoPregunta extends Fragment{
         super.onViewCreated(view, savedInstanceState);
 
         //Actualizar los textos del fragmento al crearlo
-        enunciado.setText(actividadJugar.preguntas.get(((Jugar)getActivity()).preguntaId).getPregunta());
-        r1.setText(actividadJugar.preguntas.get(actividadJugar.preguntaId).getOpcion1());
-        r2.setText(actividadJugar.preguntas.get(actividadJugar.preguntaId).getOpcion2());
-        r3.setText(actividadJugar.preguntas.get(actividadJugar.preguntaId).getOpcion3());
-        r4.setText(actividadJugar.preguntas.get(actividadJugar.preguntaId).getOpcion4());
+        enunciado.setText(actividadJugar.preguntaActual.getPregunta());
+        r1.setText(actividadJugar.preguntaActual.getOpcion1());
+        r2.setText(actividadJugar.preguntaActual.getOpcion2());
+        r3.setText(actividadJugar.preguntaActual.getOpcion3());
+        r4.setText(actividadJugar.preguntaActual.getOpcion4());
     }
 
     @Override

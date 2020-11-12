@@ -63,11 +63,11 @@ public class FragmentoPreguntaImagen extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //Actualizar los textos del fragmento al crearlo
-        enunciado.setText(((Jugar)getActivity()).preguntasImagen.get(((Jugar)getActivity()).preguntaImagenId).getPregunta());
-        r1.setImageResource(((Jugar)getActivity()).preguntasImagen.get(((Jugar)getActivity()).preguntaImagenId).getOpcion1());
-        r2.setImageResource(((Jugar)getActivity()).preguntasImagen.get(((Jugar)getActivity()).preguntaImagenId).getOpcion2());
-        r3.setImageResource(((Jugar)getActivity()).preguntasImagen.get(((Jugar)getActivity()).preguntaImagenId).getOpcion3());
-        r4.setImageResource(((Jugar)getActivity()).preguntasImagen.get(((Jugar)getActivity()).preguntaImagenId).getOpcion4());
+//        enunciado.setText(((Jugar)getActivity()).preguntasImagen.get(((Jugar)getActivity()).preguntaImagenId).getPregunta());
+//        r1.setImageResource(((Jugar)getActivity()).preguntasImagen.get(((Jugar)getActivity()).preguntaImagenId).getOpcion1());
+//        r2.setImageResource(((Jugar)getActivity()).preguntasImagen.get(((Jugar)getActivity()).preguntaImagenId).getOpcion2());
+//        r3.setImageResource(((Jugar)getActivity()).preguntasImagen.get(((Jugar)getActivity()).preguntaImagenId).getOpcion3());
+//        r4.setImageResource(((Jugar)getActivity()).preguntasImagen.get(((Jugar)getActivity()).preguntaImagenId).getOpcion4());
     }
 
     @Override
