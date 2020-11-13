@@ -9,15 +9,15 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface PreguntaDao<T> {
+public interface PreguntaDao {
 
-    @Query("SELECT * from Tabla_Preguntas")
-    LiveData<List<T>> getPreguntas();
+    @Query("SELECT * from Tabla_preguntas")
+    LiveData<List<PreguntaEntidad>> getPreguntas();
 
-    @Query("DELETE FROM Tabla_Preguntas")
+    @Query("DELETE FROM Tabla_preguntas")
     void deleteAll();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(T preguntaEntidad);
+    void insert(PreguntaEntidad preguntaEntidad);
 
 }

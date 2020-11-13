@@ -5,14 +5,16 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Tabla_Preguntas")
-public class PreguntaEntidad {
-
+public class PreguntaEntidad { //Clase padre
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    private int id;
+    protected int id;
 
     @ColumnInfo(name = "pregunta")
-    private String pregunta;
+    protected String pregunta;
+
+    @ColumnInfo(name = "video")
+    protected int video;
 
     @ColumnInfo(name = "opcion1")
     private String opcion1;
@@ -27,11 +29,14 @@ public class PreguntaEntidad {
     private String opcion4;
 
     @ColumnInfo(name = "correcta")
-    private int correcta;
+    protected int correcta;
 
-    //Constructor (el id no es necesario porque es autogenerado)
-    public PreguntaEntidad(String pregunta, String opcion1, String opcion2, String opcion3, String opcion4, int correcta) {
+
+    //Constructor padre (el id no es necesario porque es autogenerado)
+
+    public PreguntaEntidad(String pregunta, int video, String opcion1, String opcion2, String opcion3, String opcion4, int correcta) {
         this.pregunta = pregunta;
+        this.video = video;
         this.opcion1 = opcion1;
         this.opcion2 = opcion2;
         this.opcion3 = opcion3;
@@ -39,19 +44,7 @@ public class PreguntaEntidad {
         this.correcta = correcta;
     }
 
-    //Constructor por defecto
-    public PreguntaEntidad() {
-        this.id = id;
-        this.pregunta = pregunta;
-        this.opcion1 = opcion1;
-        this.opcion2 = opcion2;
-        this.opcion3 = opcion3;
-        this.opcion4 = opcion4;
-        this.correcta = correcta;
-    }
-
-
-    //Getters y setters
+    //Getters y setters padre
     public int getId() {
         return id;
     }
@@ -66,6 +59,22 @@ public class PreguntaEntidad {
 
     public void setPregunta(String pregunta) {
         this.pregunta = pregunta;
+    }
+
+    public int getVideo() {
+        return video;
+    }
+
+    public void setVideo(int v) {
+        this.video = v;
+    }
+
+    public int getCorrecta() {
+        return correcta;
+    }
+
+    public void setCorrecta(int correcta) {
+        this.correcta = correcta;
     }
 
     public String getOpcion1() {
@@ -100,11 +109,71 @@ public class PreguntaEntidad {
         this.opcion4 = opcion4;
     }
 
-    public int getCorrecta() {
-        return correcta;
-    }
 
-    public void setCorrecta(int correcta) {
-        this.correcta = correcta;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //---ORIGINAL CODE---
+    //
+//    @PrimaryKey(autoGenerate = true)
+//    @ColumnInfo(name = "id")
+//    protected int id;
+//
+//    @ColumnInfo(name = "pregunta")
+//    protected String pregunta;
+//
+//    @ColumnInfo(name = "correcta")
+//    protected int correcta;
+//
+//
+//    //Constructor padre (el id no es necesario porque es autogenerado)
+//    public PreguntaEntidad(String pregunta, int correcta) {
+//        this.pregunta = pregunta;
+//        this.correcta = correcta;
+//    }
+//
+//    //Getters y setters padre
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+//
+//    public String getPregunta() {
+//        return pregunta;
+//    }
+//
+//    public void setPregunta(String pregunta) {
+//        this.pregunta = pregunta;
+//    }
+//
+//    public int getCorrecta() {
+//        return correcta;
+//    }
+//
+//    public void setCorrecta(int correcta) {
+//        this.correcta = correcta;
+//    }
 }

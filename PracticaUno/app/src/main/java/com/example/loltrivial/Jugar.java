@@ -18,7 +18,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -53,6 +52,7 @@ public class Jugar extends AppCompatActivity {
     FragmentoPregunta preguntaFragmento;
     FragmentoPreguntaImagen preguntaImagenFragmento;
     FragmentoPreguntaMixta preguntaMixtaFragmento;
+    FragmentoPreguntaVideo preguntaVideoFragmento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,8 +114,10 @@ public class Jugar extends AppCompatActivity {
 
     private void CrearPregunta(){
         preguntaActual = listaPreguntas.get(contadorPreguntas++);
-        if (preguntaActual instanceof PreguntaEntidad) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
-            CrearFragmentoTexto();
+        if (true/*preguntaActual instanceof PreguntaTexto*/) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
+            Toast.makeText(Jugar.this, "PREGUNTA DE IMAGEN", Toast.LENGTH_SHORT).show();
+            //CrearFragmentoTexto();
+            CrearFragmentoVideo();
             if(cuentaAtrasActiva){ cuentaAtras.cancel(); }
             CrearBarraTiempo();
         }
@@ -239,6 +241,14 @@ public class Jugar extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         preguntaMixtaFragmento = new FragmentoPreguntaMixta();
         fragmentTransaction.replace(R.id.marcoPregunta, preguntaMixtaFragmento).addToBackStack("preguntaMixta");
+        fragmentTransaction.commit();
+    }
+
+    private void CrearFragmentoVideo() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        preguntaVideoFragmento = new FragmentoPreguntaVideo();
+        fragmentTransaction.replace(R.id.marcoPregunta, preguntaVideoFragmento).addToBackStack("preguntaVideo");
         fragmentTransaction.commit();
     }
 

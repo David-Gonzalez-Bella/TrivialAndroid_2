@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/enunciado3"
+            android:id="@+id/enunciado4"
             android:layout_width="308dp"
             android:layout_height="142dp"
             android:layout_marginTop="75dp"
