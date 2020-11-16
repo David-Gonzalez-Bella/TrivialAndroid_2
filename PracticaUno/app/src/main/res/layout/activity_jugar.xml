@@ -69,34 +69,50 @@
 
     <TextView
         android:id="@+id/contadorPreguntas"
-        android:layout_width="129dp"
-        android:layout_height="44dp"
+        android:layout_width="118dp"
+        android:layout_height="34dp"
         android:background="@drawable/redes_boton"
         android:text="5/10"
         android:textAlignment="center"
         android:textColor="#687372"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/botonSiguiente"
-        app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toEndOf="@+id/salir"
-        app:layout_constraintTop_toBottomOf="@+id/marcoPregunta"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.852" />
 
     <TextView
         android:id="@+id/puntuacion"
         android:layout_width="137dp"
         android:layout_height="26dp"
         android:fontFamily="sans-serif"
-        android:text="Puntuacion: 0"
+        android:text="Acertadas: 0"
         android:textColor="#FADB6A"
         android:textColorHighlight="#000000"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.607"
+        app:layout_constraintHorizontal_bias="0.587"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contadorPreguntas"
-        app:layout_constraintVertical_bias="0.626" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.913" />
+
+    <TextView
+        android:id="@+id/puntuacionFalladas"
+        android:layout_width="137dp"
+        android:layout_height="26dp"
+        android:fontFamily="sans-serif"
+        android:text="Falladas: 0"
+        android:textColor="#FADB6A"
+        android:textColorHighlight="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,7 @@ public interface PreguntaDao {
     @Query("SELECT * from Tabla_preguntas")
     LiveData<List<PreguntaEntidad>> getPreguntas();
 
-    @Query("DELETE FROM Tabla_preguntas")
+    @Query("DELETE from Tabla_preguntas")
     void deleteAll();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

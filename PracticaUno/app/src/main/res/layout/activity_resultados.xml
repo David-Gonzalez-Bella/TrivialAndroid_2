@@ -12,7 +12,6 @@
         android:id="@+id/volverMenuP"
         android:layout_width="118dp"
         android:layout_height="78dp"
-        android:layout_marginTop="40dp"
         android:background="#00FFFFFF"
         android:onClick="EntrarMenuP"
         android:scaleType="centerCrop"
@@ -20,8 +19,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoResultado"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73"
         app:srcCompat="@drawable/botonempezar" />
 
     <ImageView
@@ -59,15 +58,31 @@
         android:id="@+id/acertado"
         android:layout_width="151dp"
         android:layout_height="42dp"
-        android:layout_marginTop="24dp"
         android:fontFamily="sans-serif"
         android:text="Has acertado:"
         android:textColor="#FADB6A"
         android:textColorHighlight="#000000"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/felicidades" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <TextView
+        android:id="@+id/textoResultado"
+        android:layout_width="142dp"
+        android:layout_height="60dp"
+        android:text="acertadas"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.529" />
 
     <ImageView
         android:id="@+id/appLogoMP"
@@ -94,18 +109,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appLogoMP" />
-
-    <TextView
-        android:id="@+id/textoResultado"
-        android:layout_width="142dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="40dp"
-        android:text="acertadas"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acertado" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,7 +31,8 @@ public class Jugar extends AppCompatActivity {
 
     //Controles de la actividad
     public ConstraintLayout fondo;
-    public TextView puntuacion;
+    public TextView puntuacionAcertadas;
+    public TextView puntuacionFalladas;
     public TextView contadorPreguntasTexto;
 
     //Contadores y flags
@@ -42,6 +43,8 @@ public class Jugar extends AppCompatActivity {
     public int elegida;
     public boolean cuentaAtrasActiva;
     public int tiempoTotal;
+    private int tiempoPartida;
+    private int segundosPregunta;
 
     //Extras
     public MediaPlayer elegirRespuesta_snd;
@@ -74,13 +77,17 @@ public class Jugar extends AppCompatActivity {
         contadorPreguntasTexto = findViewById(R.id.contadorPreguntas);
         barraTiempo = findViewById(R.id.tiempo);
         fondo = findViewById(R.id.fondoLayout);
-        puntuacion = findViewById(R.id.puntuacion);
+        puntuacionAcertadas = findViewById(R.id.puntuacion);
+        puntuacionFalladas = findViewById(R.id.puntuacionFalladas);
 
         //Inicializar
         contadorAcertadas = 0;
         contadorFalladas = 0;
         contadorPreguntas = 0;
-        puntuacion.setText("Puntuación: " + contadorAcertadas);
+        tiempoPartida = 0;
+        segundosPregunta = 0;
+        puntuacionAcertadas.setText("Acertadas: " + contadorAcertadas);
+        puntuacionFalladas.setText("Falladas: " + contadorFalladas);
         elegirRespuesta_snd = MediaPlayer.create(this, R.raw.elegir_respuesta);
         contadorPreguntasTexto.setText(contadorPreguntas + "/" + "X");
         if(Ajustes.fondoOscuro) //Establecer el tema claro u oscuro segun corresponda
@@ -115,7 +122,7 @@ public class Jugar extends AppCompatActivity {
     private void CrearPregunta(){
         preguntaActual = listaPreguntas.get(contadorPreguntas++);
         if (true/*preguntaActual instanceof PreguntaTexto*/) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
-            Toast.makeText(Jugar.this, "PREGUNTA DE IMAGEN", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Jugar.this, "PREGUNTA DE IMAGEN", Toast.LENGTH_SHORT).show();
             //CrearFragmentoTexto();
             CrearFragmentoVideo();
             if(cuentaAtrasActiva){ cuentaAtras.cancel(); }
@@ -125,6 +132,9 @@ public class Jugar extends AppCompatActivity {
 
     public void GestionarPartida(View view) {
         ComprobarCorrecta();
+        tiempoPartida += segundosPregunta;
+        segundosPregunta = 0;
+        Toast.makeText(Jugar.this, "TIEMPO PARTIDA: " + tiempoPartida, Toast.LENGTH_SHORT).show();
         if (contadorPreguntas < totalPreguntas) {
             CrearPregunta();
         } else {
@@ -289,10 +299,10 @@ public class Jugar extends AppCompatActivity {
     public void ComprobarCorrecta() {
         if (preguntaActual.getCorrecta() == elegida) {
             contadorAcertadas++;
-            puntuacion.setText("Puntuacion: " + contadorAcertadas);
+            puntuacionAcertadas.setText("Acertadas: " + contadorAcertadas);
         }else{
             contadorFalladas++;
-            Toast.makeText(Jugar.this, "FALLADAS: " + contadorFalladas, Toast.LENGTH_SHORT).show();
+            puntuacionFalladas.setText("Falladas: " + contadorFalladas);
         }
     }
 
@@ -305,6 +315,7 @@ public class Jugar extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 if (millisUntilFinished <= 14000) {
                     tiempoTotal -= 6.66667;
+                    segundosPregunta += 1;
                     barraTiempo.setProgress(tiempoTotal);
                 }
             }
@@ -313,7 +324,10 @@ public class Jugar extends AppCompatActivity {
             public void onFinish() {
                 barraTiempo.setProgress(0);
                 cuentaAtrasActiva = false;
+                tiempoPartida += 15;
+                segundosPregunta = 0;
                 AlertaFinDeTiempo();
+                Toast.makeText(Jugar.this, "TIEMPO PARTIDA: " + tiempoPartida, Toast.LENGTH_SHORT).show();
             }
         };
         cuentaAtras.start();
