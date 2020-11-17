@@ -63,13 +63,15 @@ public class FragmentoPreguntaMixta extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        PreguntaEntidad preguntaActual = actividadJugar.preguntaActual;
+
         //Actualizar los textos del fragmento al crearlo
-//        enunciado.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getPregunta());
-//        imagen.setImageResource(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getImagen());
-//        r1.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion1());
-//        r2.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion2());
-//        r3.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion3());
-//        r4.setText(actividadJugar.preguntasMixtas.get(actividadJugar.preguntaMixtaId).getOpcion4());
+        enunciado.setText(preguntaActual.getPregunta());
+        imagen.setImageResource(preguntaActual.getMultimedia());
+        r1.setText(preguntaActual.getOpcion1());
+        r2.setText(preguntaActual.getOpcion2());
+        r3.setText(preguntaActual.getOpcion3());
+        r4.setText(preguntaActual.getOpcion4());
     }
 
     @Override

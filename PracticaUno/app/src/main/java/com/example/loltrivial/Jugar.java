@@ -62,8 +62,6 @@ public class Jugar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugar);
 
-        preguntaViewModel.deleteAll();
-
         //BBDD ROOM
         preguntaViewModel = ViewModelProviders.of(this).get(PreguntaViewModel.class);
         preguntaViewModel.getPreguntas().observe(this, new Observer<List<PreguntaEntidad>>() { //Observador de la lista de "preguntas entidad"
@@ -92,11 +90,11 @@ public class Jugar extends AppCompatActivity {
         puntuacionFalladas.setText("Falladas: " + contadorFalladas);
         elegirRespuesta_snd = MediaPlayer.create(this, R.raw.elegir_respuesta);
         contadorPreguntasTexto.setText(contadorPreguntas + "/" + "X");
-        if(Ajustes.fondoOscuro) //Establecer el tema claro u oscuro segun corresponda
+        if (Ajustes.fondoOscuro) //Establecer el tema claro u oscuro segun corresponda
         {
             fondo.setBackgroundResource(R.drawable.pantallajuego);
             contadorPreguntasTexto.setTextColor(0xFFFFFFFF);
-        } else{
+        } else {
             fondo.setBackgroundResource(R.drawable.pantallajuegoclaro);
             contadorPreguntasTexto.setTextColor(0xFF687372);
         }
@@ -118,16 +116,29 @@ public class Jugar extends AppCompatActivity {
         listaPreguntas = preguntas; //Llenamos la lista del activity con la lista de preguntas de PreguntaViewModel
         totalPreguntas = listaPreguntas.size(); // Igualamos el total de preguntas a la lingitud de la lista
         Collections.shuffle(listaPreguntas); //Barajar las preguntas
-        //CrearPregunta();
+        CrearPregunta();
     }
 
-    private void CrearPregunta(){
+    private void CrearPregunta() {
         preguntaActual = listaPreguntas.get(contadorPreguntas++);
-        if (true/*preguntaActual.getCategoria().compareTo("Video") == 0*/) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
-            //CrearFragmentoVideo();
-            if(cuentaAtrasActiva){ cuentaAtras.cancel(); }
-            CrearBarraTiempo();
+        switch (preguntaActual.getCategoria()) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
+            case "Video":
+                CrearFragmentoVideo();
+                break;
+            case "Texto":
+                CrearFragmentoTexto();
+                break;
+            case "Imagen":
+                CrearFragmentoImagen();
+                break;
+            case "Hibrida":
+                CrearFragmentoHibrido();
+                break;
         }
+        if (cuentaAtrasActiva) {
+            cuentaAtras.cancel();
+        }
+        CrearBarraTiempo();
     }
 
     public void GestionarPartida(View view) {
@@ -138,7 +149,9 @@ public class Jugar extends AppCompatActivity {
         if (contadorPreguntas < totalPreguntas) {
             CrearPregunta();
         } else {
-            if(cuentaAtrasActiva){ cuentaAtras.cancel(); }
+            if (cuentaAtrasActiva) {
+                cuentaAtras.cancel();
+            }
             Intent menuResultados = new Intent(this, Resultados.class); //Vamos a la pantalla de resultados
             Bundle parametros = new Bundle(); //Pasamos la puntuacion final a la actividad de Resultados
             parametros.putInt("acertadas", contadorAcertadas);
@@ -300,7 +313,7 @@ public class Jugar extends AppCompatActivity {
         if (preguntaActual.getCorrecta() == elegida) {
             contadorAcertadas++;
             puntuacionAcertadas.setText("Acertadas: " + contadorAcertadas);
-        }else{
+        } else {
             contadorFalladas++;
             puntuacionFalladas.setText("Falladas: " + contadorFalladas);
         }
