@@ -62,6 +62,8 @@ public class Jugar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugar);
 
+        preguntaViewModel.deleteAll();
+
         //BBDD ROOM
         preguntaViewModel = ViewModelProviders.of(this).get(PreguntaViewModel.class);
         preguntaViewModel.getPreguntas().observe(this, new Observer<List<PreguntaEntidad>>() { //Observador de la lista de "preguntas entidad"
@@ -77,7 +79,7 @@ public class Jugar extends AppCompatActivity {
         contadorPreguntasTexto = findViewById(R.id.contadorPreguntas);
         barraTiempo = findViewById(R.id.tiempo);
         fondo = findViewById(R.id.fondoLayout);
-        puntuacionAcertadas = findViewById(R.id.puntuacion);
+        puntuacionAcertadas = findViewById(R.id.puntuacionAcertadas);
         puntuacionFalladas = findViewById(R.id.puntuacionFalladas);
 
         //Inicializar
@@ -116,15 +118,13 @@ public class Jugar extends AppCompatActivity {
         listaPreguntas = preguntas; //Llenamos la lista del activity con la lista de preguntas de PreguntaViewModel
         totalPreguntas = listaPreguntas.size(); // Igualamos el total de preguntas a la lingitud de la lista
         Collections.shuffle(listaPreguntas); //Barajar las preguntas
-        CrearPregunta();
+        //CrearPregunta();
     }
 
     private void CrearPregunta(){
         preguntaActual = listaPreguntas.get(contadorPreguntas++);
-        if (true/*preguntaActual instanceof PreguntaTexto*/) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
-            //Toast.makeText(Jugar.this, "PREGUNTA DE IMAGEN", Toast.LENGTH_SHORT).show();
-            //CrearFragmentoTexto();
-            CrearFragmentoVideo();
+        if (true/*preguntaActual.getCategoria().compareTo("Video") == 0*/) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
+            //CrearFragmentoVideo();
             if(cuentaAtrasActiva){ cuentaAtras.cancel(); }
             CrearBarraTiempo();
         }

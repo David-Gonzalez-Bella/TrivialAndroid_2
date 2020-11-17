@@ -9,7 +9,7 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface PreguntaDao {
+public interface PreguntaDao{
 
     @Query("SELECT * from Tabla_preguntas")
     LiveData<List<PreguntaEntidad>> getPreguntas();

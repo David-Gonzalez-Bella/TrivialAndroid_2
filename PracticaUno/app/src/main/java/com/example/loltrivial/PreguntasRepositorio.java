@@ -18,6 +18,9 @@ public class PreguntasRepositorio{
 
     LiveData<List<PreguntaEntidad>> getPreguntas() { return mPreguntas; }
 
+    public void deleteAll(){
+        mPreguntaDao.deleteAll();;
+    }
 //    public void insert (PreguntaEntidad preguntaEntidad) {
 //        new insertAsyncTask(mPreguntaDao).execute(preguntaEntidad);
 //    }

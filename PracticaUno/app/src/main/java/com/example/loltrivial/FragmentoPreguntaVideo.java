@@ -70,14 +70,14 @@ public class FragmentoPreguntaVideo extends Fragment {
         PreguntaEntidad preguntaActual = actividadJugar.preguntaActual;
 
         //Actualizar los textos del fragmento al crearlo
-        enunciado.setText(preguntaActual.getPregunta());
-        video.setVideoURI(Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + preguntaActual.getVideo()));
-        video.setMediaController(new MediaController(getContext()));
-        video.requestFocus(); //Nos ahorra un tic al play (activa el focus o foco sobre este video)
-        r1.setText(preguntaActual.getOpcion1());
-        r2.setText(preguntaActual.getOpcion2());
-        r3.setText(preguntaActual.getOpcion3());
-        r4.setText(preguntaActual.getOpcion4());
+//        enunciado.setText(preguntaActual.getPregunta());
+//        video.setVideoURI(Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + preguntaActual.getMultimedia()));
+//        video.setMediaController(new MediaController(getContext()));
+//        video.requestFocus(); //Nos ahorra un tic al play (activa el focus o foco sobre este video)
+//        r1.setText(preguntaActual.getOpcion1());
+//        r2.setText(preguntaActual.getOpcion2());
+//        r3.setText(preguntaActual.getOpcion3());
+//        r4.setText(preguntaActual.getOpcion4());
     }
 
     @Override

@@ -84,7 +84,7 @@
         app:layout_constraintVertical_bias="0.852" />
 
     <TextView
-        android:id="@+id/puntuacion"
+        android:id="@+id/puntuacionAcertadas"
         android:layout_width="137dp"
         android:layout_height="26dp"
         android:fontFamily="sans-serif"

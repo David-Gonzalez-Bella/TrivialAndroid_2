@@ -2,6 +2,7 @@ package com.example.loltrivial;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -35,6 +36,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
         }
     };
 
+
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
         private final PreguntaDao preguntaDao;
@@ -47,125 +49,155 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
         protected Void doInBackground(final Void... params) { //Operaciones de la BBDD - Borrar y despues llenarla con las preguntas
             preguntaDao.deleteAll(); //Vaciar la BBDD para evitar duplicados
 
-            preguntaDao.insert(new PreguntaEntidad("¿Cómo se llama esta canción?",
-                                                    R.raw.legends_never_die,
-                                                    "Legends never die",
-                                                    "Warriors",
-                                                    "Rise",
-                                                    "We were legends",
-                                                    1));
-
-            preguntaDao.insert(new PreguntaEntidad("¿Cuál es el grupo que canta esta canción?",
-                                                    R.raw.pentakill,
-                                                    "KDA",
-                                                    "Pentakill",
-                                                    "True Damage",
-                                                    "A Day to Remember",
-                                                    2));
-
-            preguntaDao.insert(new PreguntaEntidad("¿A qué campeón está dedicada esta cinemática?",
-                                                    R.raw.sylas,
-                                                    "Garen",
-                                                    "Lux",
-                                                    "Sylas",
-                                                    "Galio",
-                                                    3));
-
-            preguntaDao.insert(new PreguntaEntidad("¿Qué artista produjo la siguiente canción?",
-                                                    R.raw.ignite,
-                                                    "Avicii",
-                                                    "Duo Kie",
-                                                    "Yassuo",
-                                                    "Zedd",
-                                                    4));
-
-            preguntaDao.insert(new PreguntaEntidad("¿A qué año pertenecen las siguientes skins arcade?",
-                                                    R.raw.arcade,
-                                                    "2010",
-                                                    "2015",
-                                                    "2019",
-                                                    "2020",
-                                                    2));
-
-            preguntaDao.insert(new PreguntaEntidad("¿A qué modo de juego pertenece el siguiente login screen?",
-                                                    R.raw.urf,
-                                                    "U.R.F.",
-                                                    "Bots Malditos",
-                                                    "A.R.U.R.F.",
-                                                    "Hexakill",
-                                                    1));
-
-            preguntaDao.insert(new PreguntaEntidad("¿Cómo se llamaba el siguiente modo de juego?",
-                                                    R.raw.ascension,
-                                                    "Dominion",
-                                                    "La Leyenda del Rey Poro",
-                                                    "Ascensión",
-                                                    "Asedio del Nexo",
-                                                    3));
-
-            preguntaDao.insert(new PreguntaEntidad("¿Qué cantante interpreta a Ekko en esta canción?",
-                                                    R.raw.giants,
-                                                    "Eminem",
-                                                    "Thutmose",
-                                                    "DUCKWRTH",
-                                                    "Keke Palmer",
-                                                    2));
-
-            preguntaDao.insert(new PreguntaEntidad("¿A que canción pertenece el siguiente videoclip?",
-                                                    R.raw.take_over,
-                                                    "As We Fall",
-                                                    "Awaken",
-                                                    "Phoenix",
-                                                    "Take Over",
-                                                    4));
-
-            preguntaDao.insert(new PreguntaEntidad("¿Cómo se llama esta canción?",
-                                                    R.raw.villain,
-                                                    "Villain",
-                                                    "MORE",
-                                                    "THE BADDEST",
-                                                    "I´ll show you",
-                                                    1));
+//            preguntaDao.insert(new PreguntaEntidad(
+//                                                    "Video",
+//                                                    "¿Cómo se llama esta canción?",
+//                                                    "legends_never_die",
+//                                                    "Legends never die",
+//                                                    "Warriors",
+//                                                    "Rise",
+//                                                    "We were legends",
+//                                                    1));
+//
+//            preguntaDao.insert(new PreguntaEntidad(
+//                                                    "Video",
+//                                                    "¿Cuál es el grupo que canta esta canción?",
+//                                                    "pentakill",
+//                                                    "KDA",
+//                                                    "Pentakill",
+//                                                    "True Damage",
+//                                                    "A Day to Remember",
+//                                                    2));
+//
+//            preguntaDao.insert(new PreguntaEntidad(
+//                                                    "Video",
+//                                                    "¿A qué campeón está dedicada esta cinemática?",
+//                                                    "sylas",
+//                                                    "Garen",
+//                                                    "Lux",
+//                                                    "Sylas",
+//                                                    "Galio",
+//                                                    3));
+//
+//            preguntaDao.insert(new PreguntaEntidad(
+//                                                    "Video",
+//                                                    "¿Qué artista produjo la siguiente canción?",
+//                                                    "ignite",
+//                                                    "Avicii",
+//                                                    "Duo Kie",
+//                                                    "Yassuo",
+//                                                    "Zedd",
+//                                                    4));
+//
+//            preguntaDao.insert(new PreguntaEntidad(
+//                                                    "Video",
+//                                                    "¿A qué año pertenecen las siguientes skins arcade?",
+//                                                    "arcade",
+//                                                    "2010",
+//                                                    "2015",
+//                                                    "2019",
+//                                                    "2020",
+//                                                    2));
+//
+//            preguntaDao.insert(new PreguntaEntidad(
+//                                                    "Video",
+//                                                    "¿A qué modo de juego pertenece el siguiente login screen?",
+//                                                    "urf",
+//                                                    "U.R.F.",
+//                                                    "Bots Malditos",
+//                                                    "A.R.U.R.F.",
+//                                                    "Hexakill",
+//                                                    1));
+//
+//            preguntaDao.insert(new PreguntaEntidad(
+//                                                    "Video",
+//                                                    "¿Cómo se llamaba el siguiente modo de juego?",
+//                                                    "ascension",
+//                                                    "Dominion",
+//                                                    "La Leyenda del Rey Poro",
+//                                                    "Ascensión",
+//                                                    "Asedio del Nexo",
+//                                                    3));
+//
+//            preguntaDao.insert(new PreguntaEntidad(
+//                                                    "Video",
+//                                                    "¿Qué cantante interpreta a Ekko en esta canción?",
+//                                                    "giants",
+//                                                    "Eminem",
+//                                                    "Thutmose",
+//                                                    "DUCKWRTH",
+//                                                    "Keke Palmer",
+//                                                    2));
+//
+//            preguntaDao.insert(new PreguntaEntidad(
+//                                                    "Video",
+//                                                    "¿A que canción pertenece el siguiente videoclip?",
+//                                                    "take_over",
+//                                                    "As We Fall",
+//                                                    "Awaken",
+//                                                    "Phoenix",
+//                                                    "Take Over",
+//                                                    4));
+//
+//            preguntaDao.insert(new PreguntaEntidad(
+//                                                    "Video",
+//                                                    "¿Cómo se llama esta canción?",
+//                                                    "villain",
+//                                                    "Villain",
+//                                                    "MORE",
+//                                                    "THE BADDEST",
+//                                                    "I´ll show you",
+//                                                    1));
 
 
 
 
 
             //HEREEEEEE
-//            preguntaDao.insert(new PreguntaTexto("¿Cuál es la región más fría de Runeterra?",
-//                                                    "Noxus",
-//                                                    "Freljord",
-//                                                    "Demacia",
-//                                                    "Ionia",
-//                                                    2));
-//
-//            preguntaDao.insert(new PreguntaTexto("¿Cuál de estos campeones no forma parte del grupo 'Pentakill'?",
-//                                                    "Karthus",
-//                                                    "Olaf",
-//                                                    "Mordekaiser",
-//                                                    "Katarina",
-//                                                    4));
-//
-//            preguntaDao.insert(new PreguntaTexto("¿Cuáles son los apodos cariñosos con los que se refieren entre sí Xayah y Rakkan?",
-//                                                    "Mieli y miella",
-//                                                    "Melli y miala",
-//                                                    "Melia y mehali",
-//                                                    "Meeli y malli",
-//                                                    1));
-//
-//            preguntaDao.insert(new PreguntaTexto("¿Cómo se llama la pistola de Jhin?",
-//                                                    "Bloom",
-//                                                    "Pum-pum",
-//                                                    "Trigger",
-//                                                    "Whisper",
-//                                                    4));
-//
-//            preguntaDao.insert(new PreguntaTexto("¿Cómo se llama el tiburón de Fizz?",
-//                                                    "Teethy",
-//                                                    "Sharky",
-//                                                    "Chomper",
-//                                                    "Finn",
-//                                                    3));
+            preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "¿Cuál es la región más fría de Runeterra?",
+                                                    "",
+                                                    "Noxus",
+                                                    "Freljord",
+                                                    "Demacia",
+                                                    "Ionia",
+                                                    2));
+
+            preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "¿Cuál de estos campeones no forma parte del grupo 'Pentakill'?",
+                    "",
+                                                    "Karthus",
+                                                    "Olaf",
+                                                    "Mordekaiser",
+                                                    "Katarina",
+                                                    4));
+
+            preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "¿Cuáles son los apodos cariñosos con los que se refieren entre sí Xayah y Rakkan?",
+                    "",
+                                                    "Mieli y miella",
+                                                    "Melli y miala",
+                                                    "Melia y mehali",
+                                                    "Meeli y malli",
+                                                    1));
+
+            preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "¿Cómo se llama la pistola de Jhin?",
+                    "",
+                                                    "Bloom",
+                                                    "Pum-pum",
+                                                    "Trigger",
+                                                    "Whisper",
+                                                    4));
+
+            preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "¿Cómo se llama el tiburón de Fizz?",
+                    "",
+                                                    "Teethy",
+                                                    "Sharky",
+                                                    "Chomper",
+                                                    "Finn",
+                                                    3));
             return null;
         }
     }
