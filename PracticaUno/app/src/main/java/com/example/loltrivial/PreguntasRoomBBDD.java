@@ -202,38 +202,47 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
             preguntaDao.insert(new PreguntaEntidad("Imagen",
                                                     "¿Cuál de estas es la region de Piltover?",
                                                     0,
-                                                    "R.drawable.ionia",
-                                                    "R.drawable.noxus",
-                                                    "R.drawable.piltover",
-                                                    "R.drawable.targon",
+                                                    "drawable/ionia",
+                                                    "drawable/noxus",
+                                                    "drawable/piltover",
+                                                    "drawable/targon",
                                                     3));
 
             preguntaDao.insert(new PreguntaEntidad("Imagen",
                                                     "¿Qué campeona fue la primera en ser reconocida como lesbiana oficialmente?",
                                                     0,
-                                                    "R.drawable.caitlyn",
-                                                    "R.drawable.fiora",
-                                                    "R.drawable.neeko",
-                                                    "R.drawable.vi",
+                                                    "drawable/caitlyn",
+                                                    "drawable/fiora",
+                                                    "drawable/neeko",
+                                                    "drawable/vi",
                                                     3));
 
             preguntaDao.insert(new PreguntaEntidad("Imagen",
                                                     "¿Cuál de estos campeones está más desatendido por la compañía desarrolladora?",
                                                     0,
-                                                    "R.drawable.maestroyi",
-                                                    "R.drawable.ezreal",
-                                                    "R.drawable.diana",
-                                                    "R.drawable.quinn",
+                                                    "drawable/maestroyi",
+                                                    "drawable/ezreal",
+                                                    "drawable/diana",
+                                                    "drawable/quinn",
                                                     4));
 
             preguntaDao.insert(new PreguntaEntidad("Imagen",
                                                     "¿Qué equipo ganó el mundial en el año 2019?",
                                                     0,
-                                                    "R.drawable.uol",
-                                                    "R.drawable.fpx",
-                                                    "R.drawable.g2",
-                                                    "R.drawable.fnatic",
+                                                    "drawable/uol",
+                                                    "drawable/fpx",
+                                                    "drawable/g2",
+                                                    "drawable/fnatic",
                                                     2));
+
+            preguntaDao.insert(new PreguntaEntidad("Imagen",
+                                                    "¿Qué campeón dice la frase: 'Sólo los divinos pueden juzgar'?",
+                                                    0,
+                                                    "drawable/kayle",
+                                                    "drawable/aurelion",
+                                                    "drawable/garen",
+                                                    "drawable/soraka",
+                                                    1));
 
 
             //Preguntas hibridas

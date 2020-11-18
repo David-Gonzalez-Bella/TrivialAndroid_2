@@ -90,7 +90,7 @@ public class FragmentoPreguntaMixta extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fragmento_pregunta_mixta, container, false);
 
         //Buscamos los controles cuyo contenido querremos modificar
-        enunciado = view.findViewById(R.id.enunciado3);
+        enunciado = view.findViewById(R.id.enunciado4);
         imagen = view.findViewById(R.id.preguntaImagen);
         r1 = view.findViewById(R.id.respuesta1);
         r2 = view.findViewById(R.id.respuesta2);

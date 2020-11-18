@@ -63,13 +63,17 @@ public class FragmentoPreguntaImagen extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         PreguntaEntidad preguntaActual = actividadJugar.preguntaActual;
+        int imageResource1 = getResources().getIdentifier(preguntaActual.getOpcion1(), null, getActivity().getPackageName());
+        int imageResource2 = getResources().getIdentifier(preguntaActual.getOpcion2(), null, getActivity().getPackageName());
+        int imageResource3 = getResources().getIdentifier(preguntaActual.getOpcion3(), null, getActivity().getPackageName());
+        int imageResource4 = getResources().getIdentifier(preguntaActual.getOpcion4(), null, getActivity().getPackageName());
 
-        //Actualizar los textos del fragmento al crearlo [HERE]
-//        enunciado.setText(preguntaActual.getPregunta());
-//        r1.setImageResource(preguntaActual.getOpcion1());
-//        r2.setImageResource(preguntaActual.getOpcion2());
-//        r3.setImageResource(preguntaActual.getOpcion3());
-//        r4.setImageResource(preguntaActual.getOpcion4());
+        //Actualizar los textos del fragmento al crearlo
+        enunciado.setText(preguntaActual.getPregunta());
+        r1.setImageDrawable(getResources().getDrawable(imageResource1));
+        r2.setImageDrawable(getResources().getDrawable(imageResource2));
+        r3.setImageDrawable(getResources().getDrawable(imageResource3));
+        r4.setImageDrawable(getResources().getDrawable(imageResource4));
     }
 
     @Override
@@ -88,7 +92,7 @@ public class FragmentoPreguntaImagen extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fragmento_pregunta_imagen, container, false);
 
         //Buscamos los controles cuyo contenido querremos modificar
-        enunciado = view.findViewById(R.id.enunciado3);
+        enunciado = view.findViewById(R.id.enunciado4);
         r1 = view.findViewById(R.id.respuesta1);
         r2 = view.findViewById(R.id.respuesta2);
         r3 = view.findViewById(R.id.respuesta3);

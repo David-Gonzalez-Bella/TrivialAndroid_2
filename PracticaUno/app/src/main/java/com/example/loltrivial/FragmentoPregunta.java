@@ -65,7 +65,7 @@ public class FragmentoPregunta extends Fragment{
         PreguntaEntidad preguntaActual = actividadJugar.preguntaActual;
 
         //Actualizar los textos del fragmento al crearlo
-        enunciado.setText(preguntaActual.getOpcion1());
+        enunciado.setText(preguntaActual.getPregunta());
         r1.setText(preguntaActual.getOpcion1());
         r2.setText(preguntaActual.getOpcion2());
         r3.setText(preguntaActual.getOpcion3());
@@ -88,7 +88,7 @@ public class FragmentoPregunta extends Fragment{
        View view = inflater.inflate(R.layout.fragment_fragmento_pregunta, container, false);
 
         //Buscamos los controles cuyo contenido querremos modificar
-        enunciado = view.findViewById(R.id.enunciado3);
+        enunciado = view.findViewById(R.id.enunciado4);
         r1 = view.findViewById(R.id.respuesta1);
         r2 = view.findViewById(R.id.respuesta2);
         r3 = view.findViewById(R.id.respuesta3);
