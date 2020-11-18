@@ -10,8 +10,11 @@ public class PreguntaEntidad { //Clase padre
     @ColumnInfo(name = "id")
     protected int id;
 
-    @ColumnInfo(name = "categoria")
-    protected String categoria;
+    @ColumnInfo(name = "tipo")
+    protected String tipo;
+
+    @ColumnInfo(name = "dificultad")
+    protected String dificultad;
 
     @ColumnInfo(name = "pregunta")
     protected String pregunta;
@@ -37,8 +40,9 @@ public class PreguntaEntidad { //Clase padre
 
     //Constructor padre (el id no es necesario porque es autogenerado)
 
-    public PreguntaEntidad(String categoria, String pregunta, int multimedia, String opcion1, String opcion2, String opcion3, String opcion4, int correcta) {
-        this.categoria = categoria;
+    public PreguntaEntidad(String tipo, String dificultad, String pregunta, int multimedia, String opcion1, String opcion2, String opcion3, String opcion4, int correcta) {
+        this.tipo = tipo;
+        this.dificultad = dificultad;
         this.pregunta = pregunta;
         this.multimedia = multimedia;
         this.opcion1 = opcion1;
@@ -57,12 +61,20 @@ public class PreguntaEntidad { //Clase padre
         this.id = id;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getDificultad() {
+        return dificultad;
+    }
+
+    public void setDificultad(String dificultad) {
+        this.dificultad = dificultad;
     }
 
     public String getPregunta() {

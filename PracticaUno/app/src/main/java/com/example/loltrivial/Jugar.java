@@ -45,6 +45,7 @@ public class Jugar extends AppCompatActivity {
     public int tiempoTotal;
     private int tiempoPartida;
     private int segundosPregunta;
+    private String dificultad;
 
     //Extras
     public MediaPlayer elegirRespuesta_snd;
@@ -90,6 +91,11 @@ public class Jugar extends AppCompatActivity {
         puntuacionFalladas.setText("Falladas: " + contadorFalladas);
         elegirRespuesta_snd = MediaPlayer.create(this, R.raw.elegir_respuesta);
         contadorPreguntasTexto.setText(contadorPreguntas + "/" + "X");
+
+        //Coger la informacion proveniente de la actividad de elegir dificultad
+        Intent intent = getIntent();
+        dificultad = intent.getStringExtra("dificultad");
+
         if (Ajustes.fondoOscuro) //Establecer el tema claro u oscuro segun corresponda
         {
             fondo.setBackgroundResource(R.drawable.pantallajuego);
@@ -121,7 +127,7 @@ public class Jugar extends AppCompatActivity {
 
     private void CrearPregunta() {
         preguntaActual = listaPreguntas.get(contadorPreguntas++);
-        switch (preguntaActual.getCategoria()) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
+        switch (preguntaActual.getTipo()) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
             case "Video":
                 CrearFragmentoVideo();
                 break;
@@ -142,24 +148,27 @@ public class Jugar extends AppCompatActivity {
     }
 
     public void GestionarPartida(View view) {
-        ComprobarCorrecta();
-        tiempoPartida += segundosPregunta;
-        segundosPregunta = 0;
-        Toast.makeText(Jugar.this, "TIEMPO PARTIDA: " + tiempoPartida, Toast.LENGTH_SHORT).show();
-        if (contadorPreguntas < totalPreguntas) {
-            CrearPregunta();
+        if (view != null && elegida == 0) {
+            Toast.makeText(this, "¡Selecciona una imagen!", Toast.LENGTH_SHORT).show();
         } else {
-            if (cuentaAtrasActiva) {
-                cuentaAtras.cancel();
+            ComprobarCorrecta();
+            tiempoPartida += segundosPregunta;
+            segundosPregunta = 0;
+            if (contadorPreguntas < totalPreguntas) {
+                CrearPregunta();
+            } else {
+                if (cuentaAtrasActiva) {
+                    cuentaAtras.cancel();
+                }
+                int puntuacionFinal = tiempoPartida * contadorAcertadas;
+                Intent menuResultados = new Intent(this, Resultados.class); //Vamos a la pantalla de resultados
+                Bundle parametros = new Bundle(); //Pasamos la puntuacion final a la actividad de Resultados
+                parametros.putInt("puntuacion", puntuacionFinal);
+                menuResultados.putExtras(parametros);
+                menuResultados.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(menuResultados);
+                finish();
             }
-            Intent menuResultados = new Intent(this, Resultados.class); //Vamos a la pantalla de resultados
-            Bundle parametros = new Bundle(); //Pasamos la puntuacion final a la actividad de Resultados
-            parametros.putInt("acertadas", contadorAcertadas);
-            //parametros.putInt("falladas", contadorFalladas);
-            menuResultados.putExtras(parametros);
-            menuResultados.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(menuResultados);
-            finish();
         }
     }
 
@@ -317,6 +326,7 @@ public class Jugar extends AppCompatActivity {
             contadorFalladas++;
             puntuacionFalladas.setText("Falladas: " + contadorFalladas);
         }
+        elegida = 0; //Tenemos que resetear la pregunta elegida de cara a la siguiente pregunta
     }
 
     public void CrearBarraTiempo() {

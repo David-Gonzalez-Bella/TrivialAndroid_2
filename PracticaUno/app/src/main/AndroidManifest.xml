@@ -9,21 +9,29 @@
         android:roundIcon="@drawable/applogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".ElegirDificultad"></activity>
+        <activity android:name=".Ranking" />
         <activity
             android:name=".Resultados"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Ajustes"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Categoria"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Jugar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MenuPricipal"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LogIn"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Ajustes"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Categoria"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Jugar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MenuPricipal"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LogIn"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -32,4 +40,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

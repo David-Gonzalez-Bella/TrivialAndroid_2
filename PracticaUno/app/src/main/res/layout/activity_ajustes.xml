@@ -8,6 +8,57 @@
     android:background="@drawable/fondomenuprincipal"
     tools:context=".Ajustes">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78">
+
+        <RadioButton
+            android:id="@+id/respuesta1"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:buttonTint="#1978A6"
+            android:text="5" />
+
+        <RadioButton
+            android:id="@+id/respuesta2"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:buttonTint="#1978A6"
+            android:text="7" />
+
+        <RadioButton
+            android:id="@+id/respuesta3"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:buttonTint="#1978A6"
+            android:text="10" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/cantidadPreguntas"
+        android:layout_width="242dp"
+        android:layout_height="33dp"
+        android:fontFamily="sans-serif"
+        android:text="Número de preguntas"
+        android:textColor="#FADB6A"
+        android:textColorHighlight="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702" />
+
     <ImageView
         android:id="@+id/appLogoMP3"
         android:layout_width="120dp"
@@ -66,7 +117,7 @@
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583" />
+        app:layout_constraintVertical_bias="0.535" />
 
     <Switch
         android:id="@+id/cambiarModo"
@@ -79,7 +130,7 @@
         app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.628" />
+        app:layout_constraintVertical_bias="0.581" />
 
     <SeekBar
         android:id="@+id/barraVolumen"

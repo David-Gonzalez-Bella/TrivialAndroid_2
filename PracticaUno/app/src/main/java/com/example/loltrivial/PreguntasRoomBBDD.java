@@ -22,6 +22,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
             //Creamos la BBDD en caso de estar vacia
             INSTANCIA_COMPARTIDA = Room.databaseBuilder(context.getApplicationContext(),
                                     PreguntasRoomBBDD.class, "Preguntas_BBDD")
+                                    .fallbackToDestructiveMigration()
                                     .addCallback(RoomCallback)
                                     .build();
         }
@@ -47,12 +48,12 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
         @Override
         protected Void doInBackground(final Void... params) { //Operaciones de la BBDD - Borrar y despues llenarla con las preguntas
-            preguntaDao.deleteAll(); //Vaciar la BBDD para evitar duplicados
-
+            preguntaDao.deleteAll(); //Vaciar la BBDD para evitar duplicados -> no hace ni mierda esto
 
             //Preguntas de video
             preguntaDao.insert(new PreguntaEntidad(
                                                     "Video",
+                                                    "Normal",
                                                     "¿Cómo se llama esta canción?",
                                                     R.raw.legends_never_die,
                                                     "Legends never die",
@@ -63,6 +64,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             preguntaDao.insert(new PreguntaEntidad(
                                                     "Video",
+                                                    "Facil",
                                                     "¿Cuál es el grupo que canta esta canción?",
                                                     R.raw.pentakill,
                                                     "KDA",
@@ -73,6 +75,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             preguntaDao.insert(new PreguntaEntidad(
                                                     "Video",
+                                                    "Normal",
                                                     "¿A qué campeón está dedicada esta cinemática?",
                                                     R.raw.sylas,
                                                     "Garen",
@@ -83,6 +86,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             preguntaDao.insert(new PreguntaEntidad(
                                                     "Video",
+                                                    "Dificil",
                                                     "¿Qué artista produjo la siguiente canción?",
                                                     R.raw.ignite,
                                                     "Avicii",
@@ -93,6 +97,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             preguntaDao.insert(new PreguntaEntidad(
                                                     "Video",
+                                                    "Normal",
                                                     "¿A qué año pertenecen las siguientes skins arcade?",
                                                     R.raw.arcade,
                                                     "2010",
@@ -103,6 +108,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             preguntaDao.insert(new PreguntaEntidad(
                                                     "Video",
+                                                    "Normal",
                                                     "¿A qué modo de juego pertenece el siguiente login screen?",
                                                     R.raw.urf,
                                                     "U.R.F.",
@@ -113,6 +119,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             preguntaDao.insert(new PreguntaEntidad(
                                                     "Video",
+                                                    "Facil",
                                                     "¿Cómo se llamaba el siguiente modo de juego?",
                                                     R.raw.ascension,
                                                     "Dominion",
@@ -123,6 +130,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             preguntaDao.insert(new PreguntaEntidad(
                                                     "Video",
+                                                    "Dificil",
                                                     "¿Qué cantante interpreta a Ekko en esta canción?",
                                                     R.raw.giants,
                                                     "Eminem",
@@ -133,6 +141,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             preguntaDao.insert(new PreguntaEntidad(
                                                     "Video",
+                                                    "Dificil",
                                                     "¿A que canción pertenece el siguiente videoclip?",
                                                     R.raw.take_over,
                                                     "As We Fall",
@@ -143,6 +152,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             preguntaDao.insert(new PreguntaEntidad(
                                                     "Video",
+                                                    "Dificil",
                                                     "¿Cómo se llama esta canción?",
                                                     R.raw.villain,
                                                     "Villain",
@@ -154,6 +164,28 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             //Preguntas de texto
             preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "Facil",
+                                                    "¿Cómo se llama la líder del grupo 'KDA'?",
+                                                    0,
+                                                    "Evelyn",
+                                                    "Ahri",
+                                                    "Kai'Sa",
+                                                    "Akali",
+                                                    2));
+
+            //Preguntas de texto
+            preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "Facil",
+                                                    "¿Cuál fue la primera canción del grupo 'KDA'?",
+                                                    0,
+                                                    "The Bloodthirster",
+                                                    "Immortal",
+                                                    "It's Time",
+                                                    "POP/STARS",
+                                                    4));
+
+            preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "Facil",
                                                     "¿Cuál es la región más fría de Runeterra?",
                                                     0,
                                                     "Noxus",
@@ -163,6 +195,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     2));
 
             preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "Facil",
                                                     "¿Cuál de estos campeones no forma parte del grupo 'Pentakill'?",
                                                     0,
                                                     "Karthus",
@@ -172,6 +205,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     4));
 
             preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "Dificil",
                                                     "¿Cuáles son los apodos cariñosos con los que se refieren entre sí Xayah y Rakkan?",
                                                     0,
                                                     "Mieli y miella",
@@ -181,6 +215,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     1));
 
             preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "Normal",
                                                     "¿Cómo se llama la pistola de Jhin?",
                                                     0,
                                                     "Bloom",
@@ -190,6 +225,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     4));
 
             preguntaDao.insert(new PreguntaEntidad("Texto",
+                                                    "Dificil",
                                                     "¿Cómo se llama el tiburón de Fizz?",
                                                     0,
                                                     "Teethy",
@@ -200,7 +236,8 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
 
             //Preguntas de imagen
             preguntaDao.insert(new PreguntaEntidad("Imagen",
-                                                    "¿Cuál de estas es la region de Piltover?",
+                                                    "Normal",
+                                                    "¿Cuál de estas es la región de Piltover?",
                                                     0,
                                                     "drawable/ionia",
                                                     "drawable/noxus",
@@ -209,6 +246,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     3));
 
             preguntaDao.insert(new PreguntaEntidad("Imagen",
+                                                    "Dificil",
                                                     "¿Qué campeona fue la primera en ser reconocida como lesbiana oficialmente?",
                                                     0,
                                                     "drawable/caitlyn",
@@ -218,6 +256,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     3));
 
             preguntaDao.insert(new PreguntaEntidad("Imagen",
+                                                    "Facil",
                                                     "¿Cuál de estos campeones está más desatendido por la compañía desarrolladora?",
                                                     0,
                                                     "drawable/maestroyi",
@@ -227,6 +266,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     4));
 
             preguntaDao.insert(new PreguntaEntidad("Imagen",
+                                                    "Normal",
                                                     "¿Qué equipo ganó el mundial en el año 2019?",
                                                     0,
                                                     "drawable/uol",
@@ -236,6 +276,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     2));
 
             preguntaDao.insert(new PreguntaEntidad("Imagen",
+                                                    "Dificil",
                                                     "¿Qué campeón dice la frase: 'Sólo los divinos pueden juzgar'?",
                                                     0,
                                                     "drawable/kayle",
@@ -244,9 +285,40 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     "drawable/soraka",
                                                     1));
 
+            preguntaDao.insert(new PreguntaEntidad("Imagen",
+                                                    "Dificil",
+                                                    "¿Con cuál de estos campeones tiene una cercana rivalidad Nami?",
+                                                    0,
+                                                    "drawable/thresh",
+                                                    "drawable/fizz",
+                                                    "drawable/pyke",
+                                                    "drawable/nautilus",
+                                                    4));
+
 
             //Preguntas hibridas
             preguntaDao.insert(new PreguntaEntidad("Hibrida",
+                                                    "Facil",
+                                                    "¿En que animal se transforma esta campeona?",
+                                                    R.drawable.shivana,
+                                                    "Serpiente",
+                                                    "Tigre",
+                                                    "Dragón",
+                                                    "Pollo",
+                                                    3));
+
+            preguntaDao.insert(new PreguntaEntidad("Hibrida",
+                                                    "Facil",
+                                                    "¿Cómo se llama esta criatura?",
+                                                    R.drawable.poro,
+                                                    "Picuchillo",
+                                                    "Krug",
+                                                    "Poro",
+                                                    "Yordle",
+                                                    3));
+
+            preguntaDao.insert(new PreguntaEntidad("Hibrida",
+                                                    "Facil",
                                                     "¿Cómo se llama este campeón?",
                                                     R.drawable.zac,
                                                     "Jayce",
@@ -256,6 +328,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     2));
 
             preguntaDao.insert(new PreguntaEntidad("Hibrida",
+                                                    "Normal",
                                                     "¿Cuántas skins tiene esta campeona?",
                                                     R.drawable.katarina,
                                                     "8",
@@ -265,6 +338,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     3));
 
             preguntaDao.insert(new PreguntaEntidad("Hibrida",
+                                                    "Normal",
                                                     "¿Cómo se llama el guardian de Soraka guardiana de las estrellas?",
                                                     R.drawable.soraka_guardian,
                                                     "Shisa",
@@ -274,6 +348,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     1));
 
             preguntaDao.insert(new PreguntaEntidad("Hibrida",
+                                                    "Dificil",
                                                     "¿Cómo se llama esta skin de Rengar?",
                                                     R.drawable.rengar,
                                                     "Rengar guardián de las arenas",
@@ -283,6 +358,7 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     1));
 
             preguntaDao.insert(new PreguntaEntidad("Hibrida",
+                                                    "Normal",
                                                     "¿Cómo se llama este objeto?",
                                                     R.drawable.deathfire_grasp,
                                                     "Empalador de Atma",

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ranking">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fondoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondomenuprincipal"
+        tools:context=".Ajustes"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/appLogoMP3"
+            android:layout_width="120dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/applogo" />
+
+        <TextView
+            android:id="@+id/felicidades2"
+            android:layout_width="287dp"
+            android:layout_height="40dp"
+            android:fontFamily="sans-serif"
+            android:text="Mejores puntuaciones"
+            android:textColor="#FADB6A"
+            android:textColorHighlight="#000000"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.572"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.282" />
+
+        <TextView
+            android:id="@+id/mejorPuntuacion1"
+            android:layout_width="143dp"
+            android:layout_height="43dp"
+            android:text="puntuación1"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/felicidades2"
+            app:layout_constraintVertical_bias="0.066" />
+
+        <TextView
+            android:id="@+id/mejorPuntuacion2"
+            android:layout_width="143dp"
+            android:layout_height="43dp"
+            android:text="puntuación2"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mejorPuntuacion1"
+            app:layout_constraintVertical_bias="0.031" />
+
+        <TextView
+            android:id="@+id/mejorPuntuacion3"
+            android:layout_width="143dp"
+            android:layout_height="43dp"
+            android:text="puntuación3"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mejorPuntuacion2"
+            app:layout_constraintVertical_bias="0.037" />
+
+        <TextView
+            android:id="@+id/mejorPuntuacion4"
+            android:layout_width="143dp"
+            android:layout_height="43dp"
+            android:text="puntuación4"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mejorPuntuacion3"
+            app:layout_constraintVertical_bias="0.04000002" />
+
+        <TextView
+            android:id="@+id/mejorPuntuacion5"
+            android:layout_width="143dp"
+            android:layout_height="43dp"
+            android:text="puntuación5"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mejorPuntuacion4"
+            app:layout_constraintVertical_bias="0.061" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/appLogoMP4"
+        android:layout_width="120dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/applogo" />
+
+    <Button
+        android:id="@+id/salir4"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/salir_boton"
+        android:fontFamily="sans-serif"
+        android:onClick="SalirMenuPrincipalAlerta"
+        android:text="X"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marcoPregunta"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

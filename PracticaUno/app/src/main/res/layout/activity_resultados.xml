@@ -8,12 +8,29 @@
     android:background="@drawable/fondomenuprincipal"
     tools:context=".Resultados">
 
+    <Button
+        android:id="@+id/salir5"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/salir_boton"
+        android:fontFamily="sans-serif"
+        android:onClick="SalirMenuPrincipalAlerta"
+        android:text="X"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageButton
         android:id="@+id/volverMenuP"
         android:layout_width="118dp"
         android:layout_height="78dp"
         android:background="#00FFFFFF"
-        android:onClick="EntrarMenuP"
+        android:onClick="EntrarRanking"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,11 +72,11 @@
         app:srcCompat="@drawable/campana" />
 
     <TextView
-        android:id="@+id/acertado"
-        android:layout_width="151dp"
-        android:layout_height="42dp"
+        android:id="@+id/tuPuntuacionEs"
+        android:layout_width="197dp"
+        android:layout_height="34dp"
         android:fontFamily="sans-serif"
-        android:text="Has acertado:"
+        android:text="Tu puntuación es:"
         android:textColor="#FADB6A"
         android:textColorHighlight="#000000"
         android:textSize="24sp"
@@ -71,9 +88,9 @@
 
     <TextView
         android:id="@+id/textoResultado"
-        android:layout_width="142dp"
-        android:layout_height="60dp"
-        android:text="acertadas"
+        android:layout_width="162dp"
+        android:layout_height="58dp"
+        android:text="puntuación"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"

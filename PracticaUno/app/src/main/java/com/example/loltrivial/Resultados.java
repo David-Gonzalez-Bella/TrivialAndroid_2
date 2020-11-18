@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class Resultados extends AppCompatActivity {
 
-    public int acertadas;
+    public int puntuacion;
     public ConstraintLayout fondo;
     public MediaPlayer sonidoVictoria_snd;
 
@@ -24,13 +24,12 @@ public class Resultados extends AppCompatActivity {
         setContentView(R.layout.activity_resultados);
 
         //Encontrar las referencias a los controles
-
         TextView textoResultado = findViewById(R.id.textoResultado);
         fondo = findViewById(R.id.fondoLayout);
 
         //Llamadas iniciales
         ObtenerParametos(); //Obtener los parametros provenientes de la actividad anterior
-        textoResultado.setText("" + acertadas);
+        textoResultado.setText("" + puntuacion);
         sonidoVictoria_snd = MediaPlayer.create(this, R.raw.pantalla_resultados);
         sonidoVictoria_snd.start();
         if (Ajustes.fondoOscuro) { //Establecer el tema claro u oscuro segun corresponda
@@ -43,7 +42,7 @@ public class Resultados extends AppCompatActivity {
     public void ObtenerParametos(){
         Bundle parametros = getIntent().getExtras();
         if(parametros != null){
-            acertadas = parametros.getInt("acertadas");
+            puntuacion = parametros.getInt("puntuacion");
         }
     }
 
@@ -64,8 +63,11 @@ public class Resultados extends AppCompatActivity {
         SalirMenuPrincipalAlerta(null);
     }
 
-    public void EntrarMenuP(View v) {
-        IrMenuPrincipal();
+    public void EntrarRanking(View v){
+        Intent menuRanking = new Intent(this, Ranking.class); //Arrancar nueva actividad
+        menuRanking.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(menuRanking);
+        finish();
     }
 
     public void IrMenuPrincipal() {

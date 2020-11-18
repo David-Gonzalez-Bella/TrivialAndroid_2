@@ -69,10 +69,10 @@ public class MenuPricipal extends AppCompatActivity{
         icono.setImageResource(galeria.get(++indiceGaleria % galeria.size()));
     }
 
-    public void EntrarPartida(View v){
-        Intent menuJugar = new Intent(this, Jugar.class); //Arrancar nueva actividad
-        menuJugar.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(menuJugar);
+    public void EntrarElegirDificultad(View v){
+        Intent menuElegirDificultad = new Intent(this, ElegirDificultad.class); //Arrancar nueva actividad
+        menuElegirDificultad.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(menuElegirDificultad);
         finish();
     }
 
@@ -87,6 +87,13 @@ public class MenuPricipal extends AppCompatActivity{
         Intent menuAjustes = new Intent(this, Ajustes.class); //Arrancar nueva actividad
         menuAjustes.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(menuAjustes);
+        finish();
+    }
+
+    public void EntrarRanking(View v){
+        Intent menuRanking = new Intent(this, Ranking.class); //Arrancar nueva actividad
+        menuRanking.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(menuRanking);
         finish();
     }
 

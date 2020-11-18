@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Categoria">
+    tools:context=".ElegirDificultad">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fondoLayout"
@@ -27,7 +27,7 @@
             app:srcCompat="@drawable/applogo" />
 
         <ImageButton
-            android:id="@+id/jugar"
+            android:id="@+id/facil"
             android:layout_width="175dp"
             android:layout_height="67dp"
             android:background="#00FFFFFF"
@@ -37,11 +37,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.387"
+            app:layout_constraintVertical_bias="0.412"
             app:srcCompat="@drawable/botonfreljord" />
 
         <ImageButton
-            android:id="@+id/jugar4"
+            android:id="@+id/dificil"
             android:layout_width="175dp"
             android:layout_height="67dp"
             android:background="#00FFFFFF"
@@ -51,25 +51,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.736"
-            app:srcCompat="@drawable/botonnoxus" />
-
-        <ImageButton
-            android:id="@+id/jugar3"
-            android:layout_width="175dp"
-            android:layout_height="67dp"
-            android:background="#00FFFFFF"
-            android:clickable="false"
-            android:scaleType="centerInside"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.62"
+            app:layout_constraintVertical_bias="0.637"
             app:srcCompat="@drawable/botonionia" />
 
         <ImageButton
-            android:id="@+id/jugar2"
+            android:id="@+id/URF"
             android:layout_width="175dp"
             android:layout_height="67dp"
             android:background="#00FFFFFF"
@@ -79,13 +65,43 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.503"
+            app:layout_constraintVertical_bias="0.748"
             app:srcCompat="@drawable/botondemacia" />
+
+        <ImageButton
+            android:id="@+id/normal"
+            android:layout_width="175dp"
+            android:layout_height="67dp"
+            android:background="#00FFFFFF"
+            android:clickable="false"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.524"
+            app:srcCompat="@drawable/botonnoxus" />
+
+        <TextView
+            android:id="@+id/elegirDifTexto"
+            android:layout_width="300dp"
+            android:layout_height="56dp"
+            android:fontFamily="sans-serif"
+            android:text="Escoger dificultad"
+            android:textAlignment="center"
+            android:textColor="#FADB6A"
+            android:textColorHighlight="#000000"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/facil"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appLogoMP3"
+            app:layout_constraintVertical_bias="0.461" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/appLogoMP2"
+        android:id="@+id/appLogoMP5"
         android:layout_width="120dp"
         android:layout_height="115dp"
         android:layout_marginTop="48dp"
@@ -96,7 +112,7 @@
         app:srcCompat="@drawable/applogo" />
 
     <Button
-        android:id="@+id/salir3"
+        android:id="@+id/salir6"
         android:layout_width="52dp"
         android:layout_height="49dp"
         android:layout_marginBottom="28dp"
@@ -111,5 +127,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/marcoPregunta"
         app:layout_constraintVertical_bias="1.0" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

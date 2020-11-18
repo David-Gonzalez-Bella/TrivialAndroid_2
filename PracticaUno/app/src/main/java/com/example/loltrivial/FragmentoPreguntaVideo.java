@@ -72,10 +72,18 @@ public class FragmentoPreguntaVideo extends Fragment {
         video.setVideoURI(Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + preguntaActual.getMultimedia()));
         video.setMediaController(new MediaController(getContext()));
         video.requestFocus(); //Nos ahorra un tic al play (activa el focus o foco sobre este video)
+        video.setOnCompletionListener(new MediaPlayer.OnCompletionListener() { //Reproducir en bucle
+            public void onCompletion(MediaPlayer mp) {
+                video.start();
+            }
+        });
+        video.start(); //Reproducir desde que entramos a la pregunta
+
         r1.setText(preguntaActual.getOpcion1());
         r2.setText(preguntaActual.getOpcion2());
         r3.setText(preguntaActual.getOpcion3());
         r4.setText(preguntaActual.getOpcion4());
+
     }
 
     @Override
