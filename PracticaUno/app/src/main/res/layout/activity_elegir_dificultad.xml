@@ -84,14 +84,14 @@
 
         <TextView
             android:id="@+id/elegirDifTexto"
-            android:layout_width="300dp"
-            android:layout_height="56dp"
+            android:layout_width="267dp"
+            android:layout_height="48dp"
             android:fontFamily="sans-serif"
             android:text="Escoger dificultad"
             android:textAlignment="center"
             android:textColor="#FADB6A"
             android:textColorHighlight="#000000"
-            android:textSize="36sp"
+            android:textSize="28sp"
             app:layout_constraintBottom_toTopOf="@+id/facil"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

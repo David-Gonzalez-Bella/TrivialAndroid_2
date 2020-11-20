@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/applogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".ElegirDificultad"></activity>
+        <activity android:name=".RankingGlobal"></activity>
+        <activity android:name=".ElegirDificultad" />
         <activity android:name=".Ranking" />
         <activity
             android:name=".Resultados"

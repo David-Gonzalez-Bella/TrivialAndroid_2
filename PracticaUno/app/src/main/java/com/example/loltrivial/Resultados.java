@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -14,35 +15,45 @@ import android.widget.Toast;
 
 public class Resultados extends AppCompatActivity {
 
-    public int puntuacion;
+    //Controles de la actividad
     public ConstraintLayout fondo;
+    public TextView textoResultado;
+    public TextView textoTiempoTotal;
+
+    //Variables globales y flags
+    public int puntuacion;
+    public int tiempoTotal;
     public MediaPlayer sonidoVictoria_snd;
+    private boolean fondoOscuro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultados);
 
+        //Coger la informacion proveniente de la actividad de elegir dificultad
+        Intent intent = getIntent();
+        puntuacion = intent.getIntExtra("puntuacion", 0);
+        tiempoTotal = intent.getIntExtra("tiempoTotal", 0);
+
         //Encontrar las referencias a los controles
-        TextView textoResultado = findViewById(R.id.textoResultado);
+        textoResultado = findViewById(R.id.textoResultado);
+        textoTiempoTotal = findViewById(R.id.tiempoTotal);
         fondo = findViewById(R.id.fondoLayout);
 
         //Llamadas iniciales
-        ObtenerParametos(); //Obtener los parametros provenientes de la actividad anterior
         textoResultado.setText("" + puntuacion);
+        textoTiempoTotal.setText("" + tiempoTotal + "''");
         sonidoVictoria_snd = MediaPlayer.create(this, R.raw.pantalla_resultados);
         sonidoVictoria_snd.start();
-        if (Ajustes.fondoOscuro) { //Establecer el tema claro u oscuro segun corresponda
+
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+        fondoOscuro = ajustes.getBoolean("tema", true);
+
+        if (fondoOscuro) { //Establecer el tema claro u oscuro segun corresponda
             fondo.setBackgroundResource(R.drawable.fondomenuprincipal);
         } else {
             fondo.setBackgroundResource(R.drawable.fondomenuprincipalclaro);
-        }
-    }
-
-    public void ObtenerParametos(){
-        Bundle parametros = getIntent().getExtras();
-        if(parametros != null){
-            puntuacion = parametros.getInt("puntuacion");
         }
     }
 

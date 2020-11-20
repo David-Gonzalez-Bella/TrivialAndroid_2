@@ -20,7 +20,6 @@ public class LogIn extends AppCompatActivity {
 
     //Variables globales
     public static EditText nombreUsuario;
-    private CheckBox checkBox;
     public static MediaPlayer mediaPlayer;
 
     @Override
@@ -30,7 +29,6 @@ public class LogIn extends AppCompatActivity {
 
         //Encontrar las referencias a los controles
         nombreUsuario = findViewById(R.id.CampoNombre);
-        checkBox = findViewById(R.id.nombreValido);
 
         //Inicializaciones
         mediaPlayer = MediaPlayer.create(this, R.raw.bensound_adventure);
@@ -38,7 +36,6 @@ public class LogIn extends AppCompatActivity {
         //Llamadas iniciales
         mediaPlayer.setLooping(true); //La musica de fondo debe estar en loop y reprodicirse desde el primer momento
         mediaPlayer.start();
-        checkBox.setChecked(false);
     }
 
     @Override
@@ -59,14 +56,11 @@ public class LogIn extends AppCompatActivity {
     public void EntrarMenuPricipal(View v){
         if(nombreUsuario.getText().toString().isEmpty()){
             Toast.makeText(this,"Nombre vacío",Toast.LENGTH_SHORT).show();
-            checkBox.setChecked(false);
             return;
         }else if (nombreUsuario.getText().toString().length() > 12 ){
             Toast.makeText(this,"Nombre demasiado largo",Toast.LENGTH_SHORT).show();
-            checkBox.setChecked(false);
             return;
         }
-        checkBox.setChecked(true);
         Intent menuPrincipal = new Intent(this, MenuPricipal.class); //Arrancar nueva actividad
         menuPrincipal.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(menuPrincipal);

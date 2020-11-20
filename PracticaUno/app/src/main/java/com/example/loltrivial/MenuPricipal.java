@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,8 @@ public class MenuPricipal extends AppCompatActivity{
     public ConstraintLayout fondo;
     public ImageButton icono;
     private ArrayList<Integer> galeria;
-    private int indiceGaleria = 0;
+    private int indiceGaleria;
+    private boolean fondoOscuro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +45,16 @@ public class MenuPricipal extends AppCompatActivity{
         galeria.add(R.drawable.iconxayah);
 
         //Llamadas iniciales
-        if(Ajustes.fondoOscuro){ fondo.setBackgroundResource(R.drawable.fondomenuprincipal); } //Este metodo sera llamado al pulsar el switch que cambia de tema claro a oscuro
-        else{ fondo.setBackgroundResource(R.drawable.fondomenuprincipalclaro); }
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+
+        indiceGaleria = ajustes.getInt("imagenPerfilIndice", 0);
         icono.setImageResource(galeria.get(indiceGaleria % galeria.size()));
-        nickUsuario.setText(LogIn.nombreUsuario.getText());
+        nickUsuario.setText(LogIn.nombreUsuario.getText()); //Establecer el nick de usuario
         nickUsuario.setPaintFlags(0);
+
+        fondoOscuro = ajustes.getBoolean("tema", true); //Establecer tema claro u oscuro
+        if(fondoOscuro){ fondo.setBackgroundResource(R.drawable.fondomenuprincipal); } //Este metodo sera llamado al pulsar el switch que cambia de tema claro a oscuro
+        else{ fondo.setBackgroundResource(R.drawable.fondomenuprincipalclaro); }
     }
 
     @Override
@@ -66,7 +73,13 @@ public class MenuPricipal extends AppCompatActivity{
     }
 
     public void CambarIcono(View v){
-        icono.setImageResource(galeria.get(++indiceGaleria % galeria.size()));
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+        SharedPreferences.Editor editor = ajustes.edit();
+        editor.putInt("imagenPerfilIndice", ajustes.getInt("imagenPerfilIndice", 0) + 1);
+        editor.commit(); //Subir los cambios
+        indiceGaleria = ajustes.getInt("imagenPerfilIndice", 0);
+        icono.setImageResource(galeria.get(indiceGaleria % galeria.size()));
+
     }
 
     public void EntrarElegirDificultad(View v){

@@ -89,7 +89,7 @@
         android:layout_height="26dp"
         android:fontFamily="sans-serif"
         android:text="Acertadas: 0"
-        android:textColor="#FADB6A"
+        android:textColor="#A66132"
         android:textColorHighlight="#000000"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"

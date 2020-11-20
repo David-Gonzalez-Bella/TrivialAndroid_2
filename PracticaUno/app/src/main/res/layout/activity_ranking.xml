@@ -28,25 +28,41 @@
 
         <TextView
             android:id="@+id/felicidades2"
-            android:layout_width="287dp"
-            android:layout_height="40dp"
+            android:layout_width="104dp"
+            android:layout_height="48dp"
             android:fontFamily="sans-serif"
-            android:text="Mejores puntuaciones"
+            android:text="Ranking"
             android:textColor="#FADB6A"
             android:textColorHighlight="#000000"
             android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.572"
+            app:layout_constraintHorizontal_bias="0.513"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.282" />
+            app:layout_constraintVertical_bias="0.277" />
+
+        <TextView
+            android:id="@+id/tipoRanking"
+            android:layout_width="152dp"
+            android:layout_height="37dp"
+            android:fontFamily="sans-serif"
+            android:text=" - X preguntas -"
+            android:textColor="#FADB6A"
+            android:textColorHighlight="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.351" />
 
         <TextView
             android:id="@+id/mejorPuntuacion1"
             android:layout_width="143dp"
             android:layout_height="43dp"
-            android:text="puntuación1"
+            android:text="---"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -54,13 +70,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/felicidades2"
-            app:layout_constraintVertical_bias="0.066" />
+            app:layout_constraintVertical_bias="0.132" />
 
         <TextView
             android:id="@+id/mejorPuntuacion2"
             android:layout_width="143dp"
             android:layout_height="43dp"
-            android:text="puntuación2"
+            android:text="---"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -74,7 +90,7 @@
             android:id="@+id/mejorPuntuacion3"
             android:layout_width="143dp"
             android:layout_height="43dp"
-            android:text="puntuación3"
+            android:text="---"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -88,7 +104,7 @@
             android:id="@+id/mejorPuntuacion4"
             android:layout_width="143dp"
             android:layout_height="43dp"
-            android:text="puntuación4"
+            android:text="---"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -102,7 +118,7 @@
             android:id="@+id/mejorPuntuacion5"
             android:layout_width="143dp"
             android:layout_height="43dp"
-            android:text="puntuación5"
+            android:text="---"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp"

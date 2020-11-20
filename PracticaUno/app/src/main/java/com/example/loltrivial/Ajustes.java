@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.View;
@@ -17,9 +18,10 @@ import android.widget.Switch;
 public class Ajustes extends AppCompatActivity {
 
     //Variables globales
+    public static final String PREFS_NAME = "PreferencesFile";
     private AudioManager audioManager;
-    public static int nPreguntas;
-    public static boolean fondoOscuro = true;
+    private int nPreguntas;
+    private boolean fondoOscuro = true;
 
     //Controles de la actividad
     private SeekBar barraVolumen;
@@ -42,9 +44,26 @@ public class Ajustes extends AppCompatActivity {
         r2 = findViewById(R.id.respuesta2);
         r3 = findViewById(R.id.respuesta3);
 
+        SharedPreferences ajustes = getSharedPreferences(PREFS_NAME, 0);
+
+        //Settear el numero de preguntas en las preferencias compartidas
+        fondoOscuro = ajustes.getBoolean("tema", true);
+        nPreguntas = ajustes.getInt("nPreguntas", 10);
 
         //Llamadas iniciales
-        if (Ajustes.fondoOscuro)  //Establecer el tema claro u oscuro segun corresponda
+       switch (nPreguntas){ //Marcar la casilla correspondiente al numero de preguntas guardadas en las preferencias compartidas
+           case 5:
+               r1.setChecked(true);
+               break;
+           case 7:
+               r2.setChecked(true);
+               break;
+           case 10:
+               r3.setChecked(true);
+               break;
+       }
+
+        if (fondoOscuro)  //Establecer el tema claro u oscuro segun corresponda al entrar a la pantalla de ajustes
         {
             cambiarModo.setText("Oscuro");
             fondo.setBackgroundResource(R.drawable.fondomenuprincipal);
@@ -61,7 +80,12 @@ public class Ajustes extends AppCompatActivity {
             public void onClick(View v) {
                 r2.setChecked(false);
                 r3.setChecked(false);
-                nPreguntas = 5;
+
+                //Settear el numero de preguntas en las preferencias compartidas
+                SharedPreferences ajustes = getSharedPreferences(PREFS_NAME, 0);
+                SharedPreferences.Editor editor = ajustes.edit();
+                editor.putInt("nPreguntas", 5);
+                editor.commit(); //Subir los cambios
             }
         });
         r2.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +93,12 @@ public class Ajustes extends AppCompatActivity {
             public void onClick(View v) {
                 r1.setChecked(false);
                 r3.setChecked(false);
-                nPreguntas = 7;
+
+                //Settear el numero de preguntas en las preferencias compartidas
+                SharedPreferences ajustes = getSharedPreferences(PREFS_NAME, 0);
+                SharedPreferences.Editor editor = ajustes.edit();
+                editor.putInt("nPreguntas", 7);
+                editor.commit(); //Subir los cambios
             }
         });
         r3.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +106,12 @@ public class Ajustes extends AppCompatActivity {
             public void onClick(View v) {
                 r2.setChecked(false);
                 r1.setChecked(false);
-                nPreguntas = 10;
+
+                //Settear el numero de preguntas en las preferencias compartidas
+                SharedPreferences ajustes = getSharedPreferences(PREFS_NAME, 0);
+                SharedPreferences.Editor editor = ajustes.edit();
+                editor.putInt("nPreguntas", 10);
+                editor.commit(); //Subir los cambios
             }
         });
     }
@@ -100,7 +134,6 @@ public class Ajustes extends AppCompatActivity {
     }
 
     public void EstablecerBarraVolumen() {
-
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         barraVolumen.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
         barraVolumen.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
@@ -123,7 +156,13 @@ public class Ajustes extends AppCompatActivity {
     }
 
     public void CambiarTema(View v) { //Este metodo sera llamado al pulsar el switch que cambia de tema claro a oscuro
-        fondoOscuro = !fondoOscuro;
+        SharedPreferences ajustes = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = ajustes.edit();
+        editor.putBoolean("tema", !ajustes.getBoolean("tema", true));
+        editor.commit(); //Subir los cambios
+
+        fondoOscuro = ajustes.getBoolean("tema", true);
+
         if (fondoOscuro) {
             cambiarModo.setText("Oscuro");
             fondo.setBackgroundResource(R.drawable.fondomenuprincipal);

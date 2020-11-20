@@ -1,5 +1,6 @@
 package com.example.loltrivial;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -102,7 +103,10 @@ public class FragmentoPreguntaImagen extends Fragment {
         actividadJugar = (Jugar)getActivity();
 
         //Establecer color de la letra, enfuncion del tema (claro u oscuro)
-        if(Ajustes.fondoOscuro) {
+        SharedPreferences ajustes = getActivity().getSharedPreferences(Ajustes.PREFS_NAME, 0);
+        actividadJugar.fondoOscuro = ajustes.getBoolean("tema", true);
+
+        if(actividadJugar.fondoOscuro) {
             enunciado.setTextColor(0xFFFFFFFF);
         }else{
             enunciado.setTextColor(0xFF000000);

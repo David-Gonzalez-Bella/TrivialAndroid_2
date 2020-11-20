@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -28,6 +30,7 @@ public class Jugar extends AppCompatActivity {
     private List<PreguntaEntidad> listaPreguntas;
     public PreguntaEntidad preguntaActual;
     private PreguntaViewModel preguntaViewModel;
+    private LiveData<List<PreguntaEntidad>> listaDificultad;
 
     //Controles de la actividad
     public ConstraintLayout fondo;
@@ -40,12 +43,15 @@ public class Jugar extends AppCompatActivity {
     private int contadorFalladas;
     private int contadorPreguntas;
     private int totalPreguntas;
+    int puntuacionFinal;
     public int elegida;
     public boolean cuentaAtrasActiva;
     public int tiempoTotal;
     private int tiempoPartida;
     private int segundosPregunta;
+    private int puntuacionAcumulada;
     private String dificultad;
+    public boolean fondoOscuro;
 
     //Extras
     public MediaPlayer elegirRespuesta_snd;
@@ -63,9 +69,15 @@ public class Jugar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugar);
 
+        //Coger la informacion proveniente de la actividad de elegir dificultad
+        Intent intent = getIntent();
+        dificultad = intent.getStringExtra("dificultad");
+
+        ElegirPreguntasDificultad(); //Escogemos la lista de preguntas acorde a la dificultad elegida
+
         //BBDD ROOM
         preguntaViewModel = ViewModelProviders.of(this).get(PreguntaViewModel.class);
-        preguntaViewModel.getPreguntas().observe(this, new Observer<List<PreguntaEntidad>>() { //Observador de la lista de "preguntas entidad"
+        listaDificultad.observe(this, new Observer<List<PreguntaEntidad>>() { //Observador de la lista de "preguntas entidad"
             @Override
             public void onChanged(List<PreguntaEntidad> preguntasEntidad) {
                 //Acciones al crear las preguntas
@@ -87,21 +99,25 @@ public class Jugar extends AppCompatActivity {
         contadorPreguntas = 0;
         tiempoPartida = 0;
         segundosPregunta = 0;
+        puntuacionAcumulada = 0;
         puntuacionAcertadas.setText("Acertadas: " + contadorAcertadas);
         puntuacionFalladas.setText("Falladas: " + contadorFalladas);
         elegirRespuesta_snd = MediaPlayer.create(this, R.raw.elegir_respuesta);
         contadorPreguntasTexto.setText(contadorPreguntas + "/" + "X");
 
-        //Coger la informacion proveniente de la actividad de elegir dificultad
-        Intent intent = getIntent();
-        dificultad = intent.getStringExtra("dificultad");
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+        fondoOscuro = ajustes.getBoolean("tema", true);
 
-        if (Ajustes.fondoOscuro) //Establecer el tema claro u oscuro segun corresponda
+        if (fondoOscuro) //Establecer el tema claro u oscuro segun corresponda
         {
             fondo.setBackgroundResource(R.drawable.pantallajuego);
+            puntuacionAcertadas.setTextColor(0xFFFADB6A);
+            puntuacionFalladas.setTextColor(0xFFFADB6A);
             contadorPreguntasTexto.setTextColor(0xFFFFFFFF);
         } else {
             fondo.setBackgroundResource(R.drawable.pantallajuegoclaro);
+            puntuacionAcertadas.setTextColor(0xFFA66132);
+            puntuacionFalladas.setTextColor(0xFFA66132);
             contadorPreguntasTexto.setTextColor(0xFF687372);
         }
     }
@@ -119,8 +135,10 @@ public class Jugar extends AppCompatActivity {
     }
 
     private void LlenarListaPreguntas(List<PreguntaEntidad> preguntas) {
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+
         listaPreguntas = preguntas; //Llenamos la lista del activity con la lista de preguntas de PreguntaViewModel
-        totalPreguntas = listaPreguntas.size(); // Igualamos el total de preguntas a la lingitud de la lista
+        totalPreguntas = ajustes.getInt("nPreguntas", 10); //listaPreguntas.size(); // Igualamos el total de preguntas a la lingitud de la lista
         Collections.shuffle(listaPreguntas); //Barajar las preguntas
         CrearPregunta();
     }
@@ -149,10 +167,11 @@ public class Jugar extends AppCompatActivity {
 
     public void GestionarPartida(View view) {
         if (view != null && elegida == 0) {
-            Toast.makeText(this, "¡Selecciona una imagen!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "¡Selecciona una opción!", Toast.LENGTH_SHORT).show();
         } else {
             ComprobarCorrecta();
             tiempoPartida += segundosPregunta;
+            puntuacionAcumulada += (15 - segundosPregunta);
             segundosPregunta = 0;
             if (contadorPreguntas < totalPreguntas) {
                 CrearPregunta();
@@ -160,16 +179,72 @@ public class Jugar extends AppCompatActivity {
                 if (cuentaAtrasActiva) {
                     cuentaAtras.cancel();
                 }
-                int puntuacionFinal = tiempoPartida * contadorAcertadas;
+                puntuacionFinal = puntuacionAcumulada * contadorAcertadas;
+                ActualizarRanking();
                 Intent menuResultados = new Intent(this, Resultados.class); //Vamos a la pantalla de resultados
-                Bundle parametros = new Bundle(); //Pasamos la puntuacion final a la actividad de Resultados
-                parametros.putInt("puntuacion", puntuacionFinal);
-                menuResultados.putExtras(parametros);
                 menuResultados.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                menuResultados.putExtra("puntuacion", puntuacionFinal);
+                menuResultados.putExtra("tiempoTotal", tiempoPartida);
                 startActivity(menuResultados);
                 finish();
             }
         }
+    }
+
+    private void ElegirPreguntasDificultad(){
+        preguntaViewModel = ViewModelProviders.of(this).get(PreguntaViewModel.class);
+        switch (dificultad){
+            case "Facil":
+                listaDificultad = preguntaViewModel.getPreguntasFaciles();
+                break;
+            case "Normal":
+                listaDificultad = preguntaViewModel.getPreguntasNormales();
+                break;
+            case "Dificil":
+                listaDificultad = preguntaViewModel.getPreguntasDificiles();
+                break;
+            case "URF":
+                listaDificultad = preguntaViewModel.getPreguntas();
+                break;
+        }
+    }
+
+    private void ActualizarRanking(){
+        int rankingPos = GetPosicionRanking();
+        if(rankingPos != -1) {
+            SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+            SharedPreferences.Editor editor = ajustes.edit();
+            editor.putInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + rankingPos, puntuacionFinal);
+            editor.commit(); //Subir los cambios
+        }
+    }
+
+    private int GetPosicionRanking(){
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+        int auxCount = -1;
+        for (int i = 0; i < 5; i++) {
+            int puntuacionDelRanking = ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + i, 0);
+            if (puntuacionFinal > puntuacionDelRanking) {
+                if (puntuacionDelRanking == 0) {
+                    auxCount = i;
+                    break;
+                } else {
+                    LiberarPosicion(i);
+                    auxCount = i;
+                    break;
+                }
+            }
+        }
+        return auxCount;
+    }
+
+    private void LiberarPosicion(int inicio) {
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+        SharedPreferences.Editor editor = ajustes.edit();
+        for (int i = 4; i > inicio; i--) {
+            editor.putInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + i, ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + (i - 1), 0));
+        }
+        editor.commit(); //Subir los cambios
     }
 
     @Override
@@ -347,10 +422,7 @@ public class Jugar extends AppCompatActivity {
             public void onFinish() {
                 barraTiempo.setProgress(0);
                 cuentaAtrasActiva = false;
-                tiempoPartida += 15;
-                segundosPregunta = 0;
                 AlertaFinDeTiempo();
-                Toast.makeText(Jugar.this, "TIEMPO PARTIDA: " + tiempoPartida, Toast.LENGTH_SHORT).show();
             }
         };
         cuentaAtras.start();

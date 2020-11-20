@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,6 +14,7 @@ public class Categoria extends AppCompatActivity {
 
     //Variables globales
     public ConstraintLayout fondo;
+    private boolean fondoOscuro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +25,10 @@ public class Categoria extends AppCompatActivity {
         fondo = findViewById(R.id.fondoLayout);
 
         //Llamadas iniciales
-        if(Ajustes.fondoOscuro){ fondo.setBackgroundResource(R.drawable.fondomenuprincipal); } //Establecer el tema claro u oscuro segun corresponda
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+        fondoOscuro = ajustes.getBoolean("tema", true);
+
+        if(fondoOscuro){ fondo.setBackgroundResource(R.drawable.fondomenuprincipal); } //Establecer el tema claro u oscuro segun corresponda
         else{ fondo.setBackgroundResource(R.drawable.fondomenuprincipalclaro); }
     }
 

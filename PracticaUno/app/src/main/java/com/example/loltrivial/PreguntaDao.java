@@ -14,6 +14,15 @@ public interface PreguntaDao{
     @Query("SELECT * from Tabla_preguntas")
     LiveData<List<PreguntaEntidad>> getPreguntas();
 
+    @Query("SELECT * from Tabla_preguntas WHERE dificultad = 'Facil' ")
+    LiveData<List<PreguntaEntidad>> getPreguntasFaciles();
+
+    @Query("SELECT * from Tabla_preguntas WHERE dificultad = 'Normal' ")
+    LiveData<List<PreguntaEntidad>> getPreguntasNormales();
+
+    @Query("SELECT * from Tabla_preguntas WHERE dificultad = 'Dificil' ")
+    LiveData<List<PreguntaEntidad>> getPreguntasDificiles();
+
     @Query("DELETE from Tabla_preguntas")
     void deleteAll();
 

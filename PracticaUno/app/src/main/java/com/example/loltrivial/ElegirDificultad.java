@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -22,6 +23,7 @@ public class ElegirDificultad extends AppCompatActivity implements View.OnClickL
 
     //Variables y flags
     private String dificultad;
+    private boolean fondoOscuro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +43,14 @@ public class ElegirDificultad extends AppCompatActivity implements View.OnClickL
         botonDificil.setOnClickListener(this);
         botonURF.setOnClickListener(this);
 
-        if (Ajustes.fondoOscuro) //Establecer el tema claro u oscuro segun corresponda
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+        fondoOscuro = ajustes.getBoolean("tema", true);
+
+        if (fondoOscuro) //Establecer el tema claro u oscuro segun corresponda
         {
-            fondo.setBackgroundResource(R.drawable.pantallajuego);
+            fondo.setBackgroundResource(R.drawable.fondomenuprincipal);
         } else {
-            fondo.setBackgroundResource(R.drawable.pantallajuegoclaro);
+            fondo.setBackgroundResource(R.drawable.fondomenuprincipalclaro);
         }
     }
 
