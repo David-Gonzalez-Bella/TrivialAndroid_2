@@ -13,6 +13,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class Resultados extends AppCompatActivity {
 
     //Controles de la actividad
@@ -47,9 +52,17 @@ public class Resultados extends AppCompatActivity {
         sonidoVictoria_snd = MediaPlayer.create(this, R.raw.pantalla_resultados);
         sonidoVictoria_snd.start();
 
-        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
-        fondoOscuro = ajustes.getBoolean("tema", true);
+        //Determinar la fecha actual
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
+        String formattedDate = df.format(c);
 
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+        SharedPreferences.Editor editor = ajustes.edit();
+        editor.putInt("partidasTotales", ajustes.getInt("partidasTotales", 0) + 1); //Actualizar el numero de partidas totales
+        editor.putString("ultimaPartida", formattedDate); //Actualizar la fecha de la ultima partida
+        editor.commit(); //Subir los cambios
+        fondoOscuro = ajustes.getBoolean("tema", true);
         if (fondoOscuro) { //Establecer el tema claro u oscuro segun corresponda
             fondo.setBackgroundResource(R.drawable.fondomenuprincipal);
         } else {

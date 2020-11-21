@@ -62,7 +62,7 @@
         android:id="@+id/Jugar"
         android:layout_width="175dp"
         android:layout_height="67dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:background="#00FFFFFF"
         android:onClick="EntrarElegirDificultad"
         android:scaleType="centerInside"
@@ -72,24 +72,10 @@
         app:srcCompat="@drawable/botonjugar" />
 
     <ImageButton
-        android:id="@+id/Categoria"
-        android:layout_width="175dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="16dp"
-        android:background="#00FFFFFF"
-        android:onClick="EntrarCategoria"
-        android:scaleType="centerInside"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Jugar"
-        app:srcCompat="@drawable/botonacategoria" />
-
-    <ImageButton
         android:id="@+id/Ajustes"
         android:layout_width="175dp"
         android:layout_height="67dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="#00FFFFFF"
         android:onClick="EntrarAjustes"
         android:scaleType="centerInside"
@@ -99,18 +85,18 @@
         app:srcCompat="@drawable/botonajustes" />
 
     <ImageButton
-        android:id="@+id/Ranking"
+        android:id="@+id/Categoria"
         android:layout_width="175dp"
         android:layout_height="67dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="24dp"
         android:background="#00FFFFFF"
         android:onClick="EntrarRanking"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Categoria"
-        app:srcCompat="@drawable/botonajustes" />
+        app:layout_constraintTop_toBottomOf="@+id/Jugar"
+        app:srcCompat="@drawable/botonranking" />
 
     <Button
         android:id="@+id/Salir"

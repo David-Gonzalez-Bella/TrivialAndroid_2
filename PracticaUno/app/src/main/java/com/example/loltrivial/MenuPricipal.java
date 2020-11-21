@@ -86,6 +86,7 @@ public class MenuPricipal extends AppCompatActivity{
         Intent menuElegirDificultad = new Intent(this, ElegirDificultad.class); //Arrancar nueva actividad
         menuElegirDificultad.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(menuElegirDificultad);
+        //overridePendingTransition(R.anim.transition_animation_dissappear, R.anim.transition_animation_appear);
         finish();
     }
 
@@ -100,13 +101,15 @@ public class MenuPricipal extends AppCompatActivity{
         Intent menuAjustes = new Intent(this, Ajustes.class); //Arrancar nueva actividad
         menuAjustes.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(menuAjustes);
+        //overridePendingTransition(R.anim.transition_animation_dissappear, R.anim.transition_animation_appear);
         finish();
     }
 
     public void EntrarRanking(View v){
-        Intent menuRanking = new Intent(this, Ranking.class); //Arrancar nueva actividad
-        menuRanking.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(menuRanking);
+        Intent menuRankingGlobal = new Intent(this, RankingGlobal.class); //Arrancar nueva actividad
+        menuRankingGlobal.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(menuRankingGlobal);
+        //overridePendingTransition(R.anim.transition_animation_appear, R.anim.transition_animation_dissappear);
         finish();
     }
 

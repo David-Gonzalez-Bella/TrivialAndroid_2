@@ -38,7 +38,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.412"
-            app:srcCompat="@drawable/botonfreljord" />
+            app:srcCompat="@drawable/botonbronce" />
 
         <ImageButton
             android:id="@+id/dificil"
@@ -52,7 +52,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.637"
-            app:srcCompat="@drawable/botonionia" />
+            app:srcCompat="@drawable/botonmaster" />
 
         <ImageButton
             android:id="@+id/URF"
@@ -66,7 +66,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.748"
-            app:srcCompat="@drawable/botondemacia" />
+            app:srcCompat="@drawable/botonaram" />
 
         <ImageButton
             android:id="@+id/normal"
@@ -80,7 +80,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.524"
-            app:srcCompat="@drawable/botonnoxus" />
+            app:srcCompat="@drawable/botonplatino" />
 
         <TextView
             android:id="@+id/elegirDifTexto"

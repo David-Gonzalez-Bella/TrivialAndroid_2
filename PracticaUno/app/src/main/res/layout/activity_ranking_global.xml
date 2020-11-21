@@ -6,4 +6,371 @@
     android:layout_height="match_parent"
     tools:context=".RankingGlobal">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fondoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondomenuprincipal"
+        tools:context=".Ajustes"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+        <TextView
+            android:id="@+id/ultimaPartida"
+            android:layout_width="126dp"
+            android:layout_height="23dp"
+            android:text="88-88-8888"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.733"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.809" />
+
+        <TextView
+            android:id="@+id/partidasTotales"
+            android:layout_width="103dp"
+            android:layout_height="22dp"
+            android:text="888"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.701"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.86" />
+
+        <ImageView
+            android:id="@+id/appLogoMP3"
+            android:layout_width="120dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/applogo" />
+
+        <TextView
+            android:id="@+id/felicidades2"
+            android:layout_width="104dp"
+            android:layout_height="48dp"
+            android:fontFamily="sans-serif"
+            android:text="Ranking"
+            android:textColor="#FADB6A"
+            android:textColorHighlight="#000000"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.513"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.277" />
+
+        <TextView
+            android:id="@+id/tipoRanking"
+            android:layout_width="121dp"
+            android:layout_height="26dp"
+            android:fontFamily="sans-serif"
+            android:text="5 preguntas"
+            android:textAlignment="center"
+            android:textColor="#FADB6A"
+            android:textColorHighlight="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.39" />
+
+        <TextView
+            android:id="@+id/ultimaPartidaTxt"
+            android:layout_width="120dp"
+            android:layout_height="25dp"
+            android:fontFamily="sans-serif"
+            android:text="Última partida:"
+            android:textAlignment="viewStart"
+            android:textColor="#FADB6A"
+            android:textColorHighlight="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.279"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.809" />
+
+        <TextView
+            android:id="@+id/partidasTotalesTxt"
+            android:layout_width="131dp"
+            android:layout_height="28dp"
+            android:fontFamily="sans-serif"
+            android:text="Partidas totales:"
+            android:textAlignment="viewStart"
+            android:textColor="#FADB6A"
+            android:textColorHighlight="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.279"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.868" />
+
+        <TextView
+            android:id="@+id/tipoRanking3"
+            android:layout_width="123dp"
+            android:layout_height="25dp"
+            android:fontFamily="sans-serif"
+            android:text="7 preguntas"
+            android:textAlignment="center"
+            android:textColor="#FADB6A"
+            android:textColorHighlight="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.39" />
+
+        <TextView
+            android:id="@+id/tipoRanking4"
+            android:layout_width="134dp"
+            android:layout_height="24dp"
+            android:fontFamily="sans-serif"
+            android:text="10 preguntas"
+            android:textAlignment="center"
+            android:textColor="#FADB6A"
+            android:textColorHighlight="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.971"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.388" />
+
+        <Button
+            android:id="@+id/salir8"
+            android:layout_width="52dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/salir_boton"
+            android:fontFamily="sans-serif"
+            android:onClick="SalirMenuPrincipalAlerta"
+            android:text="X"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <LinearLayout
+            android:id="@+id/layoutRanking5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tipoRanking"
+            app:layout_constraintVertical_bias="0.076">
+
+            <TextView
+                android:id="@+id/mejorPuntuacion1_5"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion2_5"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion3_5"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion4_5"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion5_5"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutRanking7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tipoRanking3"
+            app:layout_constraintVertical_bias="0.075">
+
+            <TextView
+                android:id="@+id/mejorPuntuacion1_7"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion2_7"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion3_7"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion4_7"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion5_7"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.906"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tipoRanking4"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/mejorPuntuacion1_10"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion2_10"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion3_10"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion4_10"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mejorPuntuacion5_10"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/appLogoMP6"
+        android:layout_width="120dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/applogo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,17 +2,13 @@ package com.example.loltrivial;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -54,6 +50,13 @@ public class LogIn extends AppCompatActivity {
     }
 
     public void EntrarMenuPricipal(View v){
+
+          //Clear shared preferences
+//        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+//        SharedPreferences.Editor editor = ajustes.edit(); //Actualizar el numero de partidas totales
+//        editor.clear();
+//        editor.commit();
+
         if(nombreUsuario.getText().toString().isEmpty()){
             Toast.makeText(this,"Nombre vacío",Toast.LENGTH_SHORT).show();
             return;

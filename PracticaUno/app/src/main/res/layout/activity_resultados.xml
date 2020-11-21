@@ -27,8 +27,8 @@
 
     <ImageButton
         android:id="@+id/volverMenuP"
-        android:layout_width="118dp"
-        android:layout_height="78dp"
+        android:layout_width="144dp"
+        android:layout_height="54dp"
         android:background="#00FFFFFF"
         android:onClick="EntrarRanking"
         android:scaleType="centerCrop"
@@ -37,8 +37,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73"
-        app:srcCompat="@drawable/botonempezar" />
+        app:layout_constraintVertical_bias="0.709"
+        app:srcCompat="@drawable/botonranking" />
 
     <ImageView
         android:id="@+id/campana1"

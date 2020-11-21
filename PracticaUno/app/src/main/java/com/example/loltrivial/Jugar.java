@@ -251,81 +251,6 @@ public class Jugar extends AppCompatActivity {
     public void onBackPressed() {
         SalirMenuPrincipalAlerta(null);
     }
-//AVANZAR PREGUNTA
-//    public void AvanzarPregunta(View v){
-//        //Determinamos el ultimo fragmento que se añadio a la pila (el fragmento actual)
-//        int indice = this.getSupportFragmentManager().getBackStackEntryCount() - 1;
-//        FragmentManager.BackStackEntry fragmentoActual = this.getSupportFragmentManager().getBackStackEntryAt(indice);
-//
-//        //En funcion del tipo de fragmento, crearemos uno u otro a continuacion
-//        switch (fragmentoActual.getName()){
-//            case "preguntaTexto":
-//                if(v!= null && elegida == 0){
-//                    Toast.makeText(this,"¡Selecciona una opción!",Toast.LENGTH_SHORT).show();
-//                }else {
-//                    ComprobarCorrecta();
-//                    if(preguntaImagenId < 4){
-//                        preguntaImagenId++;
-//                        if(cuentaAtrasActiva){ cuentaAtras.cancel(); }
-//                        if(barraTiempo.getProgress() != 0){
-//                            AlertaValidacion(fragmentoActual.getName());
-//                        }else {
-//                            CrearFragmentoImagen();
-//                            CrearBarraTiempo();
-//                            contadorPreguntasTexto.setText(++preguntaCurrent + "/" + totalPreguntasViejo);
-//                        }
-//                    }
-//                }
-//                break;
-//            case "preguntaImagen":
-//                if(v!= null && elegida == 0){
-//                    Toast.makeText(this,"¡Selecciona una imagen!",Toast.LENGTH_SHORT).show();
-//                }else {
-//                    ComprobarCorrectaImagen();
-//                    if(preguntaMixtaId < 4){
-//                        preguntaMixtaId++;
-//                        if(cuentaAtrasActiva){ cuentaAtras.cancel(); }
-//                        if(barraTiempo.getProgress() != 0){
-//                            AlertaValidacion(fragmentoActual.getName());
-//                        }else {
-//                            CrearFragmentoHibrido();
-//                            CrearBarraTiempo();
-//                            contadorPreguntasTexto.setText(++preguntaCurrent + "/" + totalPreguntasViejo);
-//                        }
-//                    }
-//                }
-//                break;
-//            case "preguntaMixta":
-//                if(v!= null && elegida == 0){
-//                    Toast.makeText(this,"¡Selecciona una opción!",Toast.LENGTH_SHORT).show();
-//                }else {
-//                    ComprobarCorrectaHibrida();
-//                    if(preguntaId < 4){
-//                        preguntaId++;
-//                        if(cuentaAtrasActiva){ cuentaAtras.cancel(); }
-//                        if(barraTiempo.getProgress() != 0){
-//                            AlertaValidacion(fragmentoActual.getName());
-//                        }else {
-//                            CrearFragmentoTexto();
-//                            CrearBarraTiempo();
-//                            contadorPreguntasTexto.setText(++preguntaCurrent + "/" + totalPreguntasViejo);
-//                        }
-//                    }else{
-//                        if(cuentaAtrasActiva){ cuentaAtras.cancel(); }
-//                        Intent menuResultados = new Intent(this, Resultados.class); //Vamos a la pantalla de resultados
-//                        Bundle parametros = new Bundle(); //Pasamos la puntuacion final a la actividad de Resultados
-//                        parametros.putInt("acertadas", acertadas);
-//                        menuResultados.putExtras(parametros);
-//                        menuResultados.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                        startActivity(menuResultados);
-//                        finish();
-//                    }
-//                }
-//                break;
-//        }
-//        elegida = 0; //La pregunta elegido al cambiar de pregunta sera, evidentemente, 0
-//        correcta = false;
-//    }
 
     private void CrearFragmentoTexto() {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -428,40 +353,6 @@ public class Jugar extends AppCompatActivity {
         cuentaAtras.start();
         cuentaAtrasActiva = true;
     }
-//ALERTA VALIDACION
-//    public void AlertaValidacion(final String nombre){
-//        //Crear el objeto alert
-//        AlertDialog.Builder alerta = new AlertDialog.Builder(this); //Creamos una alerta
-//        if(correcta){
-//            alerta.setTitle("¡Respuesta correcta!");
-//        }else{
-//            alerta.setTitle("Respuesta incorrecta...");
-//        }
-//        alerta.setCancelable(false)
-//                .setPositiveButton("Ir a la siguiente pregunta",  new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        switch(nombre){
-//                            case"preguntaTexto":
-//                                CrearFragmentoImagen();
-//                                break;
-//                            case"preguntaImagen":
-//                                CrearFragmentoHibrido();
-//                                break;
-//                            case"preguntaMixta":
-//                                CrearFragmentoTexto();
-//                                break;
-//                        }
-//                        CrearBarraTiempo();
-//                        contadorPreguntasTexto.setText(++preguntaCurrent + "/" + totalPreguntasViejo);
-//                        elegida = 0; //La pregunta elegido al cambiar de pregunta sera, evidentemente, 0
-//                    }
-//                });
-//
-//        //Crear la caja de alerta
-//        AlertDialog cajaAlerta  = alerta.create();
-//        cajaAlerta.show();
-//    }
 
     public void AlertaFinDeTiempo() {
         //Crear el objeto alerta
