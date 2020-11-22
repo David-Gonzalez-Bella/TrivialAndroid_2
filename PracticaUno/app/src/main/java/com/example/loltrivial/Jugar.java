@@ -170,8 +170,7 @@ public class Jugar extends AppCompatActivity {
             Toast.makeText(this, "¡Selecciona una opción!", Toast.LENGTH_SHORT).show();
         } else {
             ComprobarCorrecta();
-            tiempoPartida += segundosPregunta;
-            puntuacionAcumulada += (15 - segundosPregunta);
+            tiempoPartida += segundosPregunta; //Actualizar el tiempo total 
             segundosPregunta = 0;
             if (contadorPreguntas < totalPreguntas) {
                 CrearPregunta();
@@ -322,6 +321,8 @@ public class Jugar extends AppCompatActivity {
         if (preguntaActual.getCorrecta() == elegida) {
             contadorAcertadas++;
             puntuacionAcertadas.setText("Acertadas: " + contadorAcertadas);
+            puntuacionAcumulada += (15 - segundosPregunta); //Actualizar la puntuacion
+
         } else {
             contadorFalladas++;
             puntuacionFalladas.setText("Falladas: " + contadorFalladas);

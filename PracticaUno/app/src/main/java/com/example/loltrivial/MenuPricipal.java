@@ -90,13 +90,6 @@ public class MenuPricipal extends AppCompatActivity{
         finish();
     }
 
-    public void EntrarCategoria(View v){
-        Intent menuCategoria = new Intent(this, Categoria.class); //Arrancar nueva actividad
-        menuCategoria.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(menuCategoria);
-        finish();
-    }
-
     public void EntrarAjustes(View v){
         Intent menuAjustes = new Intent(this, Ajustes.class); //Arrancar nueva actividad
         menuAjustes.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
