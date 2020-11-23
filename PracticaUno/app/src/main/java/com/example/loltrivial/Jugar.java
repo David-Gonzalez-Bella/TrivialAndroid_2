@@ -1,5 +1,6 @@
 package com.example.loltrivial;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -76,12 +77,11 @@ public class Jugar extends AppCompatActivity {
         ElegirPreguntasDificultad(); //Escogemos la lista de preguntas acorde a la dificultad elegida
 
         //BBDD ROOM
-        preguntaViewModel = ViewModelProviders.of(this).get(PreguntaViewModel.class);
+        //preguntaViewModel = ViewModelProviders.of(this).get(PreguntaViewModel.class);
         listaDificultad.observe(this, new Observer<List<PreguntaEntidad>>() { //Observador de la lista de "preguntas entidad"
             @Override
-            public void onChanged(List<PreguntaEntidad> preguntasEntidad) {
+            public void onChanged(@Nullable List<PreguntaEntidad> preguntasEntidad) {
                 //Acciones al crear las preguntas
-                Toast.makeText(Jugar.this, "PREGUNTAS LISTAS! :)", Toast.LENGTH_SHORT).show();
                 LlenarListaPreguntas(preguntasEntidad); //fetch
             }
         });
@@ -94,18 +94,19 @@ public class Jugar extends AppCompatActivity {
         puntuacionFalladas = findViewById(R.id.puntuacionFalladas);
 
         //Inicializar
+        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
+
         contadorAcertadas = 0;
         contadorFalladas = 0;
-        contadorPreguntas = 0;
+        contadorPreguntas = 1;
         tiempoPartida = 0;
         segundosPregunta = 0;
         puntuacionAcumulada = 0;
         puntuacionAcertadas.setText("Acertadas: " + contadorAcertadas);
         puntuacionFalladas.setText("Falladas: " + contadorFalladas);
         elegirRespuesta_snd = MediaPlayer.create(this, R.raw.elegir_respuesta);
-        contadorPreguntasTexto.setText(contadorPreguntas + "/" + "X");
+        contadorPreguntasTexto.setText(0 + "/" + ajustes.getInt("nPreguntas", 5));
 
-        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
         fondoOscuro = ajustes.getBoolean("tema", true);
 
         if (fondoOscuro) //Establecer el tema claro u oscuro segun corresponda
@@ -136,15 +137,40 @@ public class Jugar extends AppCompatActivity {
 
     private void LlenarListaPreguntas(List<PreguntaEntidad> preguntas) {
         SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
-
         listaPreguntas = preguntas; //Llenamos la lista del activity con la lista de preguntas de PreguntaViewModel
-        totalPreguntas = ajustes.getInt("nPreguntas", 10); //listaPreguntas.size(); // Igualamos el total de preguntas a la lingitud de la lista
+        totalPreguntas = ajustes.getInt("nPreguntas", 5); //Igualamos el total de preguntas a la lingitud de la lista
         Collections.shuffle(listaPreguntas); //Barajar las preguntas
-        CrearPregunta();
+        new CountDownTimer(10, 10) { //Dar un pequeño margen para que la tabla de la BBDD cargue las preguntas antes de extraerlas en la actividad de jugar
+            public void onTick(long millisUntilFinished) { }
+            public void onFinish() {
+                //Crear la primera pregunta
+                preguntaActual = listaPreguntas.get(0);
+                contadorPreguntasTexto.setText(0 + "/" + totalPreguntas);
+                switch (preguntaActual.getTipo()) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
+                    case "Video":
+                        CrearFragmentoVideo();
+                        break;
+                    case "Texto":
+                        CrearFragmentoTexto();
+                        break;
+                    case "Imagen":
+                        CrearFragmentoImagen();
+                        break;
+                    case "Hibrida":
+                        CrearFragmentoHibrido();
+                        break;
+                }
+                if (!cuentaAtrasActiva) {
+                    CrearBarraTiempo();
+                }
+            }
+        }.start();
     }
 
     private void CrearPregunta() {
-        preguntaActual = listaPreguntas.get(contadorPreguntas++);
+        preguntaActual = listaPreguntas.get(contadorPreguntas);
+        contadorPreguntasTexto.setText(contadorPreguntas + "/" + totalPreguntas);
+        contadorPreguntas++;
         switch (preguntaActual.getTipo()) { //Crear el fragmento correspondiente, en funcion del tipo de la pregunta actual
             case "Video":
                 CrearFragmentoVideo();
@@ -170,10 +196,12 @@ public class Jugar extends AppCompatActivity {
             Toast.makeText(this, "¡Selecciona una opción!", Toast.LENGTH_SHORT).show();
         } else {
             ComprobarCorrecta();
-            tiempoPartida += segundosPregunta; //Actualizar el tiempo total 
+            puntuacionAcumulada += (15 - segundosPregunta); //Actualizar la puntuacion
+            tiempoPartida += segundosPregunta; //Actualizar el tiempo total
             segundosPregunta = 0;
             if (contadorPreguntas < totalPreguntas) {
                 CrearPregunta();
+
             } else {
                 if (cuentaAtrasActiva) {
                     cuentaAtras.cancel();
@@ -190,9 +218,9 @@ public class Jugar extends AppCompatActivity {
         }
     }
 
-    private void ElegirPreguntasDificultad(){
+    private void ElegirPreguntasDificultad() {
         preguntaViewModel = ViewModelProviders.of(this).get(PreguntaViewModel.class);
-        switch (dificultad){
+        switch (dificultad) {
             case "Facil":
                 listaDificultad = preguntaViewModel.getPreguntasFaciles();
                 break;
@@ -208,21 +236,21 @@ public class Jugar extends AppCompatActivity {
         }
     }
 
-    private void ActualizarRanking(){
+    private void ActualizarRanking() {
         int rankingPos = GetPosicionRanking();
-        if(rankingPos != -1) {
+        if (rankingPos != -1) {
             SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
             SharedPreferences.Editor editor = ajustes.edit();
-            editor.putInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + rankingPos, puntuacionFinal);
+            editor.putInt("puntuacion_" + ajustes.getInt("nPreguntas", 5) + "_" + rankingPos, puntuacionFinal);
             editor.commit(); //Subir los cambios
         }
     }
 
-    private int GetPosicionRanking(){
+    private int GetPosicionRanking() {
         SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
         int auxCount = -1;
         for (int i = 0; i < 5; i++) {
-            int puntuacionDelRanking = ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + i, 0);
+            int puntuacionDelRanking = ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 5) + "_" + i, 0);
             if (puntuacionFinal > puntuacionDelRanking) {
                 if (puntuacionDelRanking == 0) {
                     auxCount = i;
@@ -241,7 +269,7 @@ public class Jugar extends AppCompatActivity {
         SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
         SharedPreferences.Editor editor = ajustes.edit();
         for (int i = 4; i > inicio; i--) {
-            editor.putInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + i, ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + (i - 1), 0));
+            editor.putInt("puntuacion_" + ajustes.getInt("nPreguntas", 5) + "_" + i, ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 5) + "_" + (i - 1), 0));
         }
         editor.commit(); //Subir los cambios
     }
@@ -321,7 +349,6 @@ public class Jugar extends AppCompatActivity {
         if (preguntaActual.getCorrecta() == elegida) {
             contadorAcertadas++;
             puntuacionAcertadas.setText("Acertadas: " + contadorAcertadas);
-            puntuacionAcumulada += (15 - segundosPregunta); //Actualizar la puntuacion
 
         } else {
             contadorFalladas++;

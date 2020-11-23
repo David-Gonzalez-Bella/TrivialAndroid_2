@@ -48,7 +48,7 @@ public class Ajustes extends AppCompatActivity {
 
         //Settear el numero de preguntas en las preferencias compartidas
         fondoOscuro = ajustes.getBoolean("tema", true);
-        nPreguntas = ajustes.getInt("nPreguntas", 10);
+        nPreguntas = ajustes.getInt("nPreguntas", 5);
 
         //Llamadas iniciales
        switch (nPreguntas){ //Marcar la casilla correspondiente al numero de preguntas guardadas en las preferencias compartidas

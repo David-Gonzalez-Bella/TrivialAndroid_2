@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Tabla_Preguntas")
-public class PreguntaEntidad { //Clase padre
+public class PreguntaEntidad {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     protected int id;
@@ -38,8 +38,7 @@ public class PreguntaEntidad { //Clase padre
     protected int correcta;
 
 
-    //Constructor padre (el id no es necesario porque es autogenerado)
-
+    //Constructor
     public PreguntaEntidad(String tipo, String dificultad, String pregunta, int multimedia, String opcion1, String opcion2, String opcion3, String opcion4, int correcta) {
         this.tipo = tipo;
         this.dificultad = dificultad;

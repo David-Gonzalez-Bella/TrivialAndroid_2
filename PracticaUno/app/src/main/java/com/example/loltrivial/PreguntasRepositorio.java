@@ -13,7 +13,7 @@ public class PreguntasRepositorio{
     private LiveData<List<PreguntaEntidad>> mPreguntasN;
     private LiveData<List<PreguntaEntidad>> mPreguntasD;
 
-    PreguntasRepositorio (Application application) {
+    public PreguntasRepositorio (Application application) {
         PreguntasRoomBBDD db = PreguntasRoomBBDD.getInstanciaCompartida(application);
         mPreguntaDao = db.preguntaDao();
         mPreguntas = mPreguntaDao.getPreguntas();
@@ -22,9 +22,9 @@ public class PreguntasRepositorio{
         mPreguntasD = mPreguntaDao.getPreguntasDificiles();
     }
 
-    LiveData<List<PreguntaEntidad>> getPreguntas() { return mPreguntas; }
-    LiveData<List<PreguntaEntidad>> getPreguntasFaciles() { return mPreguntasF; }
-    LiveData<List<PreguntaEntidad>> getPreguntasNormales() { return mPreguntasN; }
-    LiveData<List<PreguntaEntidad>> getPreguntasDificiles() { return mPreguntasD; }
+    public LiveData<List<PreguntaEntidad>> getPreguntas() { return mPreguntas; }
+    public LiveData<List<PreguntaEntidad>> getPreguntasFaciles() { return mPreguntasF; }
+    public LiveData<List<PreguntaEntidad>> getPreguntasNormales() { return mPreguntasN; }
+    public LiveData<List<PreguntaEntidad>> getPreguntasDificiles() { return mPreguntasD; }
 
 }

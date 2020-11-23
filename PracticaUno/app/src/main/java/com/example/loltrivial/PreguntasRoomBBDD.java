@@ -1,6 +1,7 @@
 package com.example.loltrivial;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -33,22 +34,22 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db); //Crear la BBDD
-            new PopulateDbAsync(INSTANCIA_COMPARTIDA).execute();
+            new PopulateDbAsync(INSTANCIA_COMPARTIDA).execute(); //[HERE]
         }
     };
 
 
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
-        private final PreguntaDao preguntaDao;
+        private PreguntaDao preguntaDao;
 
         private PopulateDbAsync(PreguntasRoomBBDD db) {
             preguntaDao = db.preguntaDao();
         }
 
         @Override
-        protected Void doInBackground(final Void... params) { //Operaciones de la BBDD - Borrar y despues llenarla con las preguntas
-            preguntaDao.deleteAll(); //Vaciar la BBDD para evitar duplicados -> no hace ni mierda esto
+        protected Void doInBackground(Void... params) { //Operaciones de la BBDD - Borrar y despues llenarla con las preguntas
+            //preguntaDao.deleteAll(); //Vaciar la BBDD para evitar duplicados -> no hace ni mierda esto
 
             //Preguntas de video
             preguntaDao.insert(new PreguntaEntidad(
@@ -366,7 +367,6 @@ public abstract class PreguntasRoomBBDD extends RoomDatabase {
                                                     "Voluntad de los Ancestros",
                                                     "Fervor de Stark",
                                                     2));
-
             return null;
         }
     }

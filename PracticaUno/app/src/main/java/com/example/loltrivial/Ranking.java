@@ -44,7 +44,7 @@ public class Ranking extends AppCompatActivity {
         //Mostrar los textos correspondientes
         SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
 
-        tipoDeRanking.setText("- " + ajustes.getInt("nPreguntas", 0) + " preguntas -");
+        tipoDeRanking.setText("- " + ajustes.getInt("nPreguntas", 5) + " preguntas -");
         MostrarPuntuaciones();
 
         //Establecer el tema claro u oscuro segun corresponda
@@ -83,11 +83,11 @@ public class Ranking extends AppCompatActivity {
 
     private void MostrarPuntuaciones(){
         SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
-        p1.setText("" + ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + 0, 0));
-        p2.setText("" + ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + 1, 0));
-        p3.setText("" + ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + 2, 0));
-        p4.setText("" + ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + 3, 0));
-        p5.setText("" + ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 0) + "_" + 4, 0));
+        p1.setText("" + ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 5) + "_" + 0, 0));
+        p2.setText("" + ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 5) + "_" + 1, 0));
+        p3.setText("" + ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 5) + "_" + 2, 0));
+        p4.setText("" + ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 5) + "_" + 3, 0));
+        p5.setText("" + ajustes.getInt("puntuacion_" + ajustes.getInt("nPreguntas", 5) + "_" + 4, 0));
     }
 
     public void SalirMenuPrincipalAlerta(View v){
