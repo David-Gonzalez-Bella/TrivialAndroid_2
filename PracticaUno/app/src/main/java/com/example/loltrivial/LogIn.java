@@ -51,12 +51,6 @@ public class LogIn extends AppCompatActivity {
 
     public void EntrarMenuPricipal(View v){
 
-          //Clear shared preferences
-//        SharedPreferences ajustes = getSharedPreferences(Ajustes.PREFS_NAME, 0);
-//        SharedPreferences.Editor editor = ajustes.edit(); //Actualizar el numero de partidas totales
-//        editor.clear();
-//        editor.commit();
-
         if(nombreUsuario.getText().toString().isEmpty()){
             Toast.makeText(this,"Nombre vacío",Toast.LENGTH_SHORT).show();
             return;
